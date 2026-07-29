@@ -20,9 +20,17 @@ body {
 }
 
 body {
-  background:
-    radial-gradient(circle at top, rgba(243, 241, 241, 0.35), transparent 34%),
-    linear-gradient(180deg, #7b5cf2 0%, #5b21b6 100%);
+  background: #7b5cf2;
+  background: linear-gradient(
+    90deg,
+    rgba(123, 92, 242, 1) 0%,
+    rgba(218, 210, 246, 1) 38%,
+    rgba(246, 245, 247, 1) 44%,
+    rgba(247, 247, 247, 1) 50%,
+    rgba(247, 247, 247, 1) 56%,
+    rgba(219, 213, 246, 1) 61%,
+    rgba(123, 92, 242, 1) 100%
+  );
   color: #1f1f29;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -31,13 +39,14 @@ body {
 img.log-convert {
   width: 120px;
   display: block;
-  margin: 32px auto 12px auto;
+  margin: 0 auto 12px auto;
+  padding: 10px;
 }
 
 main {
   max-width: 420px;
   width: min(100%, 420px);
-  margin: 0 auto 90px auto;
+  margin: 0 auto 0 auto;
   padding: 32px 28px;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 24px;
@@ -116,7 +125,6 @@ main section {
 main section p {
   margin: auto;
   font-size: 0.95rem;
-
 }
 
 main section p:nth-child(2),
