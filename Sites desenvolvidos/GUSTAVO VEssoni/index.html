@@ -4,148 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulário</title>
-    <link rel="stylesheet" href="stilo/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta checkinsend - Login</title>
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
 
 <body>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo"><img src="img/chekin2.png" alt="icon-check" class="log-check"></div>
 
-    <div class="container">
-        <DIV class="confirmacao">
-            <h1>Confirmação de Presença</h1>
-            <p class="subtitle">Você vai comparecer ao evento? <br>Complete o formuário abaixo.</p>
-        </DIV>
-        <div class="divider"></div>
-        <div class="informacoes">
-            <h4>Informações do evento:</h4>
-            <p><img src="img/data-limite.png" alt="icon-data" width="15x"> <strong>Data:</strong> 16/05/2026 às 22h</p>
-            <p><img src="img/mapa 2.png" alt="icon-mapa" width="14px"> <strong>Local: </strong> Automóvel Clube - Av.
-                Afonso
-                Pena, 1394, Centro - Belo Horizonte (MG)</p>
+            <div class="nav-icons">
+                
+                <button class="hamburger" id="menuToggle">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
         </div>
 
-        <form>
-            <div class="row">
-                <input type="text" placeholder="Nome" required>
-                <input type="text" placeholder="Sobrenome" required>
+        <nav class="mobile-menu" id="mobileMenu">
+            <div class="menu-header">
+            </div>
+            <ul>
+                <li><a href="index.html">Iniciar sessão</a></li>
+                <li><a href="../checkinSend/formulário/index.html" class="conta">Crie sua Conta CheckinSend</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-box">
+        <h1>Conta CheckinSend</h1>
+        <p class="subtitle">Gerencie sua Conta CheckinSend</p>
+
+        <form id="loginForm">
+            <div class="input-container">
+                <input type="email" id="emailInput" placeholder="E-mail ou número de telefone" required>
+                <div id="email-error" class="error-msg">ⓘ Insira um e-mail válido.</div>
             </div>
 
-            <div class="divider"></div>
-
-            <input type="email" placeholder="nome@example.com" required>
-
-            <div class="select-group">
-                <label>País</label>
-                <select>
-                    <option>+55 (Brasil)</option>
-                </select>
+            <div class="input-container">
+                <input type="password" id="passwordInput" placeholder="Senha" required>
+                <div id="pass-error" class="error-msg">ⓘ A senha é obrigatória.</div>
             </div>
 
-            <input type="tel" placeholder="Número (WhatsApp)" required>
-            <p class="info-text">DDD + Telefone Ex: 31 99999-9999</p>
+            <img src="img/icon_dataprivacy_2x.png" alt="icon-privacy" class="iconprivacy">
 
-            <div class="divider"></div>
-
-            <div class="upload-container">
-                <input type="file" id="file-upload" class="hidden-input">
-                <label for="file-upload" class="custom-upload">
-                    <div class="content-left">
-                        <span class="icon">📷</span>
-                        <span class="text">Clique aqui e envie sua selfie</span>
-                    </div>
-                    <div class="button-right">Selecionar</div>
-                </label>
-            </div>
-            <br>
-            <div id="info-text">
-                <p> <img src="img/em-formacao.png" alt="icon-inf" width="15px"> <strong>Certifique-se de que a
-                        foto;</strong></p>
-                <p>• Tenha boa qualidade e boa iluminação.</p>
-                <p>• Mostre bem o rosto, na posição frontal.</p>
-                <p>• Seja infividual - apenas a pessoa cadastrada esteja na foto.</p>
-                <p>• Seja atual, sem óculos, máscara ou boné.</p>
+            <div class="button-group">
+                <button type="submit" class="btn-continue" disabled>Continuar</button>
+                <button type="button" class="btn-sessao"><img src="img/icon_dataprivacy_2x.png" width="14">Inicie sessão
+                </button>
             </div>
 
-            <div class="privacy-container">
-                <h3>Política de Privacidade <small>(clique para aceitar) *</small></h3>
+            <hr class="divider">
 
-                <label class="checkbox-wrapper">
-                    <input type="checkbox" required>
-                    <span class="label-text">
-                        Aceito a <strong>política de privacidade</strong> da plataforma e o tratamento dos meus dados
-                        pessoais de acordo com os artigos 7° e 11° da Lei n° 13.709/2018 com as finalidades de controle
-                        de entrada e futuras comunicações deste evento. Estou de acordo com o compartilhamento dos meus
-                        dados única e exclusivamente com o organizador do evento. A entrada do evento só será permitida
-                        através de apresentação de QR Code Único que será enviado por e-mail e whatsapp após aprovação
-                        do anfitrião. Após o evento, os dados serão excluídos desta plataforma.
-                    </span>
-                </label>
-                <p class="required-msg">* campos obrigatórios</p>
-            </div>
-
-            <div class="captcha-section">
-                <div class="captcha-box">
-                    <img src="https://via.placeholder.com/120x50?text=9RDJ" alt="Captcha">
-                    <input type="text" placeholder="Insira os caracteres da imagem">
-                </div>
-                <div class="captcha-links">
-                    <a href="#">Novo código</a> | <a href="#">Deficiência visual</a>
+            <div class="social-auth">
+                <p>Ou acesse com:</p>
+                <div class="social-icons">
+                    <button type="button" class="btn-social google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" width="18">
+                        Google
+                    </button>
+                    <button type="button" class="btn-social">Outros</button>
                 </div>
             </div>
-
-            <div class="footer-container">
-                <!-- Link de Idioma -->
-                <div class="language-switch">
-                    <img src="https://flagcdn.com/w20/us.png" alt="EUA">
-                    <a href="#">English Version</a>
-                </div>
-
-                <!-- Bloco de Texto -->
-                <div class="info-text">
-                    <p>Problemas ao enviar o formulário?</p>
-                    <p>Confira se todos os campos estão preenchidos ou reinicie a página e envie os dados novamente.</p>
-                    <p>Caso o problema persista, clique no balão de chat que se encontra no canto inferior direito</p>
-                    <p>ou envie um e-mail para <a
-                            href="mailto:contato@codemyparty.com.br">contato@codemyparty.com.br</a>.</p>
-                </div>
-
-                <!-- Política de Privacidade -->
-                <a href="#" class="privacy-link">POLÍTICA DE PRIVACIDADE</a>
-            </div>
-
-            <button type="submit" class="btn-submit">Enviar</button>
         </form>
+    </main>
 
-        <section class="footer-section">
-  <!-- Botão de Envio Principal -->
-  <button class="btn-enviar">Enviar</button>
-
-  <!-- Seção de Suporte e Idioma -->
-  <div class="support-info">
-    <div class="lang-switch">
-      <img src="https://flagcdn.com/w20/us.png" alt="USA Flag">
-      <a href="#">English Version</a>
-    </div>
-    <p>Problemas ao enviar o formulário?</p>
-    <p>Confira se todos os campos estão preenchidos ou reinicie a página e envie os dados novamente.</p>
-    <p>Caso o problema persista, clique no balão de chat que se encontra no canto inferior direito</p>
-    <p>ou envie um e-mail para <a href="mailto:contato@codemyparty.com.br">contato@codemyparty.com.br</a>.</p>
-    <a href="#" class="privacy-link">POLÍTICA DE PRIVACIDADE</a>
-  </div>
-
-  <!-- Faixa de Encerramento com Logo -->
-  <footer class="bottom-bar">
-    <img src="img/code my party.png" alt="Code My Party" class="footer-logo" >
-  </footer>
-
-  <!-- Botão Flutuante de WhatsApp -->
-  <a href="https://wa.me/seunumero" class="whatsapp-btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-</section>
-    </div>
-
+    <script src="estilos/script.js"></script>
 </body>
 
 </html>
