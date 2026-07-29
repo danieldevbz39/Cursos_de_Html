@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=pt-brn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversor de moedas 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img class="log-convert" src="assets/conversor-log.png" alt="log-convert">
+
+    <main>
+        <label>
+            converter de:
+            <select class="convert-convert">
+                <option value="real">R$ Brasileiro</option>
+                <option value="dolar">US Dolar</option>
+            </select>
+        </label>
+
+        <label>
+            converter para
+
+            <select class="currency-select">
+                <option value="real">R$ Brasileiro</option>
+                <option value="dolar">US Dolar</option>
+            </select>
+        </label>
+
+        <label>
+            Valor R$:
+            <input class="inputValue" placeholder="R$ 100.000,00"/>
+        </label>
+
+        <button class="button-convert">Converter</button>
+
+        <section>
+            <div class="amountToconvert">
+                <img src="assets/brasil.png" alt="Real">
+                <p class="currency">Real</p>
+                <p class="currencyValue">0,00</p>
+            </div>
+
+            <img src="assets/seta.png" alt="arrow" width="35px">
+
+            <div class="convertedvalue">
+                <img src="assets/dolar.png" alt="Dolar">
+                <p class="currency">Dólar</p>
+                <p class="currencyConverted">U$ 0,00</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body> 
+</html>

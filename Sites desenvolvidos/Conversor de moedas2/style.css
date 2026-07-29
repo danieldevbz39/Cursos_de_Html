@@ -1,0 +1,155 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  color-scheme: dark;
+  color: #1f1f29;
+  background: #7b5cf2;
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(243, 241, 241, 0.35), transparent 34%),
+    linear-gradient(180deg, #7b5cf2 0%, #5b21b6 100%);
+  color: #1f1f29;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img.log-convert {
+  width: 120px;
+  display: block;
+  margin: 32px auto 12px auto;
+}
+
+main {
+  max-width: 420px;
+  width: min(100%, 420px);
+  margin: 0 auto 90px auto;
+  padding: 32px 28px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.24);
+  text-align: left;
+}
+
+main label {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c2c3a;
+}
+
+main label strong {
+  display: inline-block;
+  font-weight: 700;
+}
+
+main select,
+main input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #d9d9e6;
+  border-radius: 14px;
+  background: #fbfbff;
+  padding: 0 16px;
+  font-size: 1rem;
+  color: #1f1f29;
+}
+
+main select {
+  appearance: none;
+}
+
+main input {
+  outline: none;
+}
+
+main button {
+  width: 100%;
+  margin: 8px 0 24px 0;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7b5cf2, #5b21b6);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+main button:hover,
+main button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(123, 92, 242, 0.28);
+}
+
+main section {
+  border: 1px solid #e7e4fb;
+  border-radius: 18px;
+  padding: 24px 18px;
+  background: #f8f6ff;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  justify-content: space-around;
+}
+
+main section p {
+  margin: auto;
+  font-size: 0.95rem;
+
+}
+
+main section p:nth-child(2),
+main section p:nth-child(4) {
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: #3d3d57;
+}
+.amountToconvert {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.convertedvalue {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3d3d57;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  img.log-convert {
+    width: 100px;
+    margin-top: 20px;
+  }
+
+  main {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  main section {
+    padding: 20px 16px;
+  }
+}
