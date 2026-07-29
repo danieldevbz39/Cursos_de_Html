@@ -16,17 +16,25 @@ function convert_valores () {
     
     const convertValue = valueInput / dolarToday
 
+    if(currencySelect.value == "dolar"){
+        valueconverted.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+    }).format(convertValue)
+    }
+
+    if(currencySelect.value == "euro"){
+        valueconverted.innerHTML = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR"
+    }).format(convertValue)
+    }
+
+
     valueReal.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
     }).format(valueInput)
-
-    valueconverted.innerHTML = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD"
-    }).format(convertValue)
-    
-    console.log (convertValue)
 }
 
 
