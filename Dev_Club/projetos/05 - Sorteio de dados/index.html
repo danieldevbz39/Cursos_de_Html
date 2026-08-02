@@ -3,20 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorteio de dados</title>
-    <link rel="stylesheet" href="estilos/style.css" />
+    <title>Random</title>
+    <style>
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 130px;
+        }
+
+      img {
+        width: 200px;
+      }
+
+      h2 {
+        font-size: 55px;
+      }
+
+      td {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .container-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        font-size: 1.3rem;
+      }
+
+      a:hover {
+        color: rgb(63, 63, 63);
+      }
+    </style>
   </head>
   <body>
-    <img src="img/dados.webp" alt="dados" width="150px" />
-
-    <h2>Sortear Dados</h2>
-
-    <div>
-      <input placeholder="entre" class="input-min" type="number"/>
-      <input placeholder="e" class="input-max" type="number" />
+    <div class="container">        
+        <img src="Sorteio de dados 1/img/dados.webp" alt="dados" />
+        <h2>Sorteio de dados</h2>
     </div>
 
-    <button onclick="generateNumber()">Sortear</button>
+    <div class="container-group">
+        <a href="Sorteio de dados 1/index.html">Sorteio de dados 1</a>
+        <a href="Sorteio de dados 2/index.html">Sorteio de dados 2</a>
+        <a href="Sorteio de dados 3/index.html">Sorteio de dados 3</a>
+    </div>
   </body>
-  <script src="./script.js"></script>
 </html>
