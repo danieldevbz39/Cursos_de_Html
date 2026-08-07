@@ -25,7 +25,9 @@
             if(input.value.toLocaleLowerCase() === contacts [i].name.toLocaleLowerCase()){
 
               p.innerHTML = `Contato Encontrado Nome: ${contacts[i].name} Tel.: ${contacts[i].number}`
-              
+
+            //   p.innerHTML = "Contato Encontrado: " + contacts[i].name + " Tel: " + contacts[i].number // também da pra fazer desse jeito também
+
               break
             }else {
               p.innerHTML = "Contato não encontrado, tente novamente."
