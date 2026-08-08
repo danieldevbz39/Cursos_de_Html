@@ -1,15 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Procura Contatos</title>
-</head>
-<body>
-    <input placeholder="Digire o nome do contato">
-    <p></p>
-    <button>Procurar Contato</button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <input placeholder="Digire o nome do contato" />
+      <p>texto aqui</p>
+      <button onclick="search()">Procurar Contato</button>
+    </div>
+  </body>
+  <script>
+    let p = document.querySelector('p')
+    let input = document.querySelector('input')
 
-</body>
-<script src="./script.js"></script>
+    const contacts = [
+        {name: 'Rodolfo', number: '(19) 9999-5555'},
+        {name: 'Paulo', number: '(31) 9987-5355'},
+        {name: 'Aline', number: '(22) 9965-5555'},
+        {name: 'Maria', number: '(15) 99129-2255'},
+        {name: 'Daniel', number: '(11) 9933-5555'},
+        {name: 'Ana', number: '(10) 9995-5455'},
+    ]
+
+    function search(){
+        for (let i = 0 ; i < contacts.length ; i ++){
+            if (input.value.toLocaleLowerCase() === contacts [i].name.toLocaleLowerCase()){
+                p.innerHTML = `Contato Encontrado. Nome: ${contacts[i].name} Tel: ${contacts[i].number}`
+            break
+            }else {
+                p.innerHTML = "Contato não encontrado, tente novamente."
+            }
+        }
+    }
+  </script>
 </html>
