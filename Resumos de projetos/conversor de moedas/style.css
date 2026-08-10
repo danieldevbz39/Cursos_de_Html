@@ -15,6 +15,12 @@ Body{
     text-align: center;
     margin: 100px;
     gap: 20px;
+    background: #8b51fd;
+    color: white;
+}
+
+.money {
+    width: 150px;
 }
 
 img {
