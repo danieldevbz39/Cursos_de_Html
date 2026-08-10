@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversor de moedas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>Conversor de moedas</h3>
+
+    <label>
+        <select>
+            <option class="VlConverter" value="Real">R$ Brasil</option>
+        </select>
+    </label>
+
+    <label>
+        Valor: <input class="campoNunber" placeholder="100,00">
+    </label>
+
+    <label>
+        <select class="currencySelect">
+            <option class="VlConvertido" value="real"> R$ Brasil</option>
+            <option class="VlConvertido" value="dolar">$ EUA</option>
+            <option class="VlConvertido" value="libra">£ Inglaterra</option>
+            <option class="VlConvertido" value="euro">€ União Europeia</option>
+            <option class="VlConvertido" value="btc">₿ Biticoin</option>
+        </select>
+
+        <button class="btnConverter">Converter</button>
+
+        <section>
+            <div>
+                <img src="assets/real.png" alt="moeda">
+                <p class="currency">Real</p>
+                <p class="currencyValueToConvert">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <img class="currencyimg" src="assets/dolar.png" alt="moeda">
+                <p class="currency" id="currencyName">Dolar americano</p>
+                <p class="currencyValueToConverted">US$ 0.0</p>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+</body>
+</html>
