@@ -1,5 +1,4 @@
 
-
 function sum (value, value2){
     console.log (value + value2)
 }
@@ -19,7 +18,7 @@ function mult (value, value2){
     console.log (value * value2)
 }
 
-mult (10, 10)
+mult (13, 10)
 
 
 function div (value, value2){
