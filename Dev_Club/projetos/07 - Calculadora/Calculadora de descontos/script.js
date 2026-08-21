@@ -17,4 +17,4 @@ cart.forEach (value => {
 
 });
 
-console.log('R$',finalValue,)
+console.log('R$',finalValue.toFixed(2))
