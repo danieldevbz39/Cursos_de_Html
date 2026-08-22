@@ -22,12 +22,32 @@ body {
 }
 
 a {
-    color: black;
+    color: rgb(85, 85, 85);
     padding: 3px 3px 3px 0;
 }
 
 a:hover {
+    color: black;
+}
+
+.container nav .nav-link {
     color: rgb(85, 85, 85);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.nav-portfolio {
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.container nav .nav-portfolio:hover {
+    color: rgb(85, 85, 85);
+}
+
+.container nav .nav-link:hover {
+    color: rgb(0, 0, 0);
 }
 
 h2, p {
@@ -79,6 +99,10 @@ button {
     .container a {
         font-size: 25px;
         cursor: pointer;
+    }
+
+    .container nav .nav-link {
+        font-size: 27.5px;
     }
 
     h3 {

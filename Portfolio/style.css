@@ -70,6 +70,8 @@ a {
 }
 
 
+
+
 /* ==========================================================================
        HEADER & NAVEGAÇÃO
        ========================================================================== */
@@ -127,6 +129,21 @@ nav {
 .nav-links a:hover {
     color: var(--primary);
 }
+
+.nav-links .nav-portfolio,
+.mobile-nav-links .nav-portfolio {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.nav-links .nav-portfolio {
+    font-size: 1.045rem;
+}
+
+.mobile-nav-links .nav-portfolio {
+    font-size: 1.1rem;
+}
+
 
 .menu-toggle,
 .menu-close {
