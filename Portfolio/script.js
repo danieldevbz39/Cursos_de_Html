@@ -1,9 +1,9 @@
 // 1. Efeito Typewriter (Máquina de Escrever)
 const words = [
-    "Desenvolvedor Full Stack",
-    "Especialista em Interfaces Ágeis",
-    "Modelagem de Dados & APIs",
-    "Precisão Visual & Arte-Final"
+    "Desenvolvedor HTML, CSS e JavaScript",
+    "Especialista em Interfaces Responsivas",
+    "Sites funcionais e bem estruturados",
+    "Precisão visual em cada detalhe"
 ];
 let wordIndex = 0;
 let charIndex = 0;
@@ -68,10 +68,16 @@ function initMobileMenu() {
 // 2. Lógica do Carrossel de Sites
 function initCarousel() {
     const track = document.getElementById("carouselTrack");
-    const slides = Array.from(track.children);
+    const featuredSlide = track.querySelector(".slide-featured");
     const nextBtn = document.getElementById("nextBtn");
     const prevBtn = document.getElementById("prevBtn");
     const dotsContainer = document.getElementById("carouselDots");
+
+    if (featuredSlide) {
+        track.prepend(featuredSlide);
+    }
+
+    const slides = Array.from(track.children);
 
     let currentIndex = 0;
 
