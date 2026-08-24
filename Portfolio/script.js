@@ -39,7 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect();
     initCarousel();
     initMobileMenu();
+    initVisitCounter();
 });
+
+async function initVisitCounter() {
+    const visitCountElement = document.getElementById("visitCount");
+    const counterUrl = "https://api.counterapi.dev/v2/danieldev-portfolio/visitas/up";
+
+    try {
+        const response = await fetch(counterUrl, { method: "GET" });
+
+        if (!response.ok) throw new Error("Não foi possível atualizar o contador");
+
+        const data = await response.json();
+        const count = Number(data.data?.up_count);
+
+        if (!Number.isFinite(count)) throw new Error("Resposta inválida do contador");
+
+        visitCountElement.textContent = count.toLocaleString("pt-BR");
+    } catch (error) {
+        visitCountElement.textContent = "indisponível";
+    }
+}
 
 function initMobileMenu() {
     const menuToggle = document.getElementById("menuToggle");
