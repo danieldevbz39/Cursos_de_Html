@@ -1,0 +1,113 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+/* Ocultar barra de rolagem horizontal mantendo deslize fluido */
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE e Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Faixa contínua de categorias */
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 42s linear infinite;
+}
+
+.marquee-group {
+    flex-shrink: 0;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .marquee-group + .marquee-group {
+        display: none;
+    }
+}
+
+
+/* Radar Ping Animation */
+
+@keyframes radar-pulse {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.85;
+    }
+    100% {
+        transform: scale(2.6);
+        opacity: 0;
+    }
+}
+
+.animate-radar-1 {
+    animation: radar-pulse 3s cubic-bezier(0.2, 0.6, 0.35, 1) infinite;
+}
+
+.animate-radar-2 {
+    animation: radar-pulse 3s cubic-bezier(0.2, 0.6, 0.35, 1) 1.5s infinite;
+}
+
+
+/* Scroll Reveal Transition */
+
+.reveal-elem {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-elem.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Custom Glassmorphism */
+
+.glass-panel {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Floating Toast Animation */
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.toast-enter {
+    animation: slide-down 0.4s ease-out forwards;
+}
