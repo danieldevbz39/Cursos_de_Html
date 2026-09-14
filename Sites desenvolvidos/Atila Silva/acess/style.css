@@ -142,7 +142,7 @@ body {
     width: 2rem;
     height: 2rem;
     border-radius: 0.4rem;
-    object-fit: cover;
+    object-fit: contain;
     flex: 0 0 2rem;
     background: #ffffff;
 }
@@ -199,15 +199,16 @@ body {
 }
 
 .floating-badge-icon {
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
+    width: 2.75rem;
+    height: 2.75rem;
+    object-fit: contain;
     border-radius: 0.45rem;
-    flex: 0 0 2rem;
+    flex: 0 0 2.75rem;
     margin-left: -2.5rem;
     transform: translateX(0);
     box-shadow: none;
     filter: grayscale(1);
+    background: transparent;
 }
 
 .floating-badge:nth-child(2) .floating-badge-icon {

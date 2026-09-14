@@ -191,10 +191,17 @@ function filterReviews(cat, selectedButton) {
 // 8. Simulador de Cotação
 function generateQuote(e) {
     e.preventDefault();
-    const type = document.getElementById("quote-vehicle-type").value;
-    const model = document.getElementById("quote-model").value.trim();
-    const name = document.getElementById("quote-name").value.trim();
-    const service = document.getElementById("quote-service").value;
+
+    const form = e.target;
+    const type = document.getElementById("quoteVehicleType")?.value || "";
+    const model = document.getElementById("quoteModel")?.value.trim() || "";
+    const name = document.getElementById("quoteName")?.value.trim() || "";
+    const service = document.getElementById("quoteService")?.value || "";
+
+    if (!type || !model || !name || !service) {
+        alert("Preencha todos os campos para gerar a proposta no WhatsApp.");
+        return;
+    }
 
     const formattedMsg =
         `*SIMULAÇÃO DE COTAÇÃO - SITE*\n` +
@@ -205,7 +212,7 @@ function generateQuote(e) {
         `Olá Átila Silva, gostaria de receber a proposta deste veículo.`;
 
     handleWhatsAppContact(formattedMsg);
-    e.target.reset();
+    form.reset();
 }
 
 function sendTechnicalForm(e) {
