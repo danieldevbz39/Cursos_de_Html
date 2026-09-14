@@ -259,31 +259,25 @@
                         </div>
 
                         <!-- Badges Flutuantes de Destaque -->
-                        <div class="card">
-                            
-                            <div
-                                class="absolute -top-4 -left-6 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                                <img src="source/Vans&Utilitários.jpg" alt="Localização" class="w-4 h-4 text-emerald-400 object-cover rounded-sm">
-                                <div>
-                                    <p class="font-extrabold text-white text-[11px]">Localização Exata</p>
-                                    <p class="text-[10px] text-slate-400">GPS Satelital em tempo real</p>
-                                </div>
+                        <div class="floating-badge floating-badge-location absolute -top-4 -left-8">
+                            <img src="source/Localização exata.png" alt="Localização" class="floating-badge-icon">
+                            <div class="floating-badge-content">
+                                <p class="font-extrabold text-white text-[11px]">Localização Exata</p>
+                                <p class="text-[10px] text-slate-400">GPS Satelital em tempo real</p>
                             </div>
                         </div>
 
-                        <div
-                            class="absolute -bottom-4 -left-4 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                            <img src="source/Frotas%20Comerciais.jpeg" alt="Bloqueio" class="w-4 h-4 text-amber-400 object-cover rounded-sm">
-                            <div>
+                        <div class="floating-badge floating-badge-lock absolute -bottom-4 -left-8">
+                            <img src="source/Monitoramento 24h - técnico.png" alt="Bloqueio" class="floating-badge-icon">
+                            <div class="floating-badge-content">
                                 <p class="font-extrabold text-white text-[11px]">Bloqueio Seguro</p>
                                 <p class="text-[10px] text-slate-400">Corte de ignição pelo celular</p>
                             </div>
                         </div>
 
-                        <div
-                            class="absolute top-1/2 -right-10 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                            <img src="source/Maquin%C3%A1rios%20Agricolas.jpeg" alt="Relógio" class="w-4 h-4 text-blue-400 object-cover rounded-sm">
-                            <div>
+                        <div class="floating-badge floating-badge-monitoring absolute top-1/2 -right-10">
+                            <img src="source/Bloqueio seguro.png" alt="Relógio" class="floating-badge-icon">
+                            <div class="floating-badge-content">
                                 <p class="font-extrabold text-white text-[11px]">Monitoramento 24h</p>
                                 <p class="text-[10px] text-slate-400">Proteção contínua e suporte</p>
                             </div>
@@ -1350,9 +1344,9 @@
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
     <button onclick="handleWhatsAppContact('Olá Átila! Vim pelo site e gostaria de um atendimento rápido.')"
         aria-label="WhatsApp"
-        class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
-        
+        class="floating-whatsapp-button fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+        <span class="floating-whatsapp-pulse animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
+        <img src="source/whatsapp.png" alt="WhatsApp" class="relative z-10 w-7 h-7 object-cover rounded-full">
     </button>
 
     <!-- Script Customizado Separado -->

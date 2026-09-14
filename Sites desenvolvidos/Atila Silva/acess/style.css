@@ -176,6 +176,94 @@ body {
         margin: -1rem auto 1rem;
     }
 }
+.floating-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 176px;
+    max-width: 220px;
+    padding: 0.65rem 0.8rem;
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid rgba(248, 250, 252, 0.2);
+    border-radius: 0.85rem;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 4;
+}
+
+.floating-badge-location,
+.floating-badge-lock,
+.floating-badge-monitoring {
+    left: auto;
+}
+
+.floating-badge-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 0.45rem;
+    flex: 0 0 2rem;
+    margin-left: -2.5rem;
+    transform: translateX(0);
+    box-shadow: none;
+    filter: grayscale(1);
+}
+
+.floating-badge:nth-child(2) .floating-badge-icon {
+    margin-left: -2.4rem;
+}
+
+.floating-badge-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 130px;
+}
+
+.floating-badge-location {
+    left: -4.5rem;
+}
+
+.floating-badge-lock {
+    left: -4.5rem;
+}
+
+.floating-badge-monitoring {
+    left: auto;
+}
+.floating-whatsapp-button {
+    background: rgb(74, 171, 82);
+    border: 0;
+    box-shadow: 0 0 0 0 rgb(74, 171, 82), 0 18px 40px rgba(0, 0, 0, 0.22);
+    color: #ffffff;
+}
+
+.floating-whatsapp-button:hover {
+    background: rgb(74, 171, 82);
+}
+
+.floating-whatsapp-pulse {
+    background: rgb(74, 171, 82);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+}
+
+.floating-whatsapp-button .floating-whatsapp-pulse {
+    animation: whatsappPulse 1.8s infinite;
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgb(74, 171, 82);
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    75%, 100% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+        transform: scale(1.14);
+        opacity: 0;
+    }
+}
 
 .feature-card {
     overflow: hidden;
