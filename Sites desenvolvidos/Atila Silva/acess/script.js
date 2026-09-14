@@ -148,42 +148,50 @@ function simulateVehicleLock() {
 
 // 6. Filtro de Categorias de Veículos
 function filterVehicles(cat, selectedButton) {
-    document.querySelectorAll(".vehicle-filter-btn").forEach((btn) => {
+    document.querySelectorAll(".vehicleFilterButton").forEach((btn) => {
         btn.className =
-            "vehicle-filter-btn bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200";
+            "vehicleFilterButton bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200";
     });
     if (selectedButton) {
         selectedButton.className =
-            "vehicle-filter-btn active bg-slate-900 text-white text-xs font-bold px-5 py-2.5 rounded-full transition";
+            "vehicleFilterButton active bg-slate-900 text-white text-xs font-bold px-5 py-2.5 rounded-full transition";
     }
 
-    const cards = document.querySelectorAll(".vehicle-card");
+    const cards = document.querySelectorAll(".vehicleCard");
     cards.forEach((card) => {
-        if (cat === "all" || card.classList.contains(cat)) {
+        const showCard = cat === "all" || card.classList.contains(cat);
+        if (showCard) {
             card.classList.remove("hidden");
+            card.classList.add("vehicle-card-grid-selected");
         } else {
             card.classList.add("hidden");
+            card.classList.remove("vehicle-card-grid-selected");
         }
     });
 }
 
 // 7. Filtro de Depoimentos
 function filterReviews(cat, selectedButton) {
-    document.querySelectorAll(".review-btn").forEach((btn) => {
+    document.querySelectorAll(".reviewFilterButton").forEach((btn) => {
         btn.className =
-            "review-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition";
+            "reviewFilterButton bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition";
     });
     if (selectedButton) {
         selectedButton.className =
-            "review-btn active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full transition";
+            "reviewFilterButton active bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-full transition";
     }
 
-    const cards = document.querySelectorAll(".review-card");
+    const cards = document.querySelectorAll(".reviewCard");
     cards.forEach((card) => {
-        if (cat === "all" || card.classList.contains(cat)) {
+        const showCard = cat === "all" || card.classList.contains(cat);
+        if (showCard) {
             card.classList.remove("hidden");
+            card.classList.add("review-card-active");
+            card.classList.remove("review-card-muted");
         } else {
             card.classList.add("hidden");
+            card.classList.remove("review-card-active");
+            card.classList.add("review-card-muted");
         }
     });
 }
@@ -249,6 +257,78 @@ function sendTechnicalForm(e) {
     }
 
     handleWhatsAppContact(message);
+}
+
+const openTechnicalFormIframeButton = document.getElementById("openTechnicalFormIframe");
+const technicalFormIframeWrapper = document.getElementById("technicalFormIframeWrapper");
+const technicalFormIframe = document.getElementById("technicalFormIframe");
+const technicalForm = document.getElementById("technicalForm");
+
+if (openTechnicalFormIframeButton && technicalFormIframeWrapper && technicalFormIframe && technicalForm) {
+    const technicalLabels = {
+        vehicles: "Categorias atendidas",
+        compatibility: "Compatibilidade",
+        fleet: "Pessoa física e frotas",
+        coverage: "Cobertura",
+        signal: "Tecnologia e sinal",
+        update: "Atualização",
+        lock: "Bloqueio seguro",
+        safety: "Bloqueio em movimento",
+        access: "Acesso do cliente",
+        features: "Recursos do aplicativo",
+        monitoring: "Monitoramento 24h",
+        installation: "Local da instalação",
+        time: "Tempo de instalação",
+        warranty: "Garantia e parte elétrica",
+        anatel: "Homologação e bateria",
+        price: "Condições de preço",
+        equipment: "Equipamento",
+        contract: "Fidelidade e cancelamento",
+        payment: "Pagamento",
+        support: "Suporte técnico",
+        resolution: "Prazo de resolução",
+    };
+
+    const technicalFormMarkup = technicalForm.outerHTML
+        .replace('onsubmit="sendTechnicalForm(event)"', '')
+        .replace('class="hidden bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-10"', 'class="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-10"');
+
+    const srcdoc = "<!doctype html>" +
+        "<html lang='pt-BR'>" +
+        "<head><meta charset='UTF-8' /><meta name='viewport' content='width=device-width, initial-scale=1.0' />" +
+        "<style>" +
+        "body { font-family: Arial, Helvetica, sans-serif; background: #eef6ff; color: #0f172a; margin: 0; padding: 24px; }" +
+        ".form-wrap { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 28px; padding: 28px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12); border: 1px solid #cbd5e1; }" +
+        "label { display: block; font-size: 12px; font-weight: 800; color: #334155; margin: 14px 0 8px; }" +
+        "input, textarea { width: 100%; box-sizing: border-box; background: #f8fafc; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 12px; padding: 10px 12px; font-size: 13px; outline: none; }" +
+        "textarea { min-height: 96px; resize: vertical; }" +
+        "fieldset { border: 1px solid #deeaf3; border-radius: 18px; padding: 20px; margin-bottom: 18px; background: #f8fafc; }" +
+        "legend { padding: 0 8px; font-size: 14px; font-weight: 900; color: #0f172a; }" +
+        "button[type='submit'] { width: 100%; background: #2563eb; color: #fff; font-size: 14px; font-weight: 900; border: none; border-radius: 14px; padding: 14px 24px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; transition: 0.2s ease; }" +
+        "button[type='submit']:hover { background: #1d4ed8; }" +
+        "</style></head>" +
+        "<body><div class='form-wrap'>" + technicalFormMarkup + "</div>" +
+        "<script>" +
+        "const form = document.getElementById('technicalForm');" +
+        "form.addEventListener('submit', function (event) {" +
+        "  event.preventDefault();" +
+        "  const formData = new FormData(form);" +
+        "  const labels = " + JSON.stringify(technicalLabels) + ";" +
+        "  let message = '*FORMULÁRIO DE ALINHAMENTO TÉCNICO E COMERCIAL*\\n';" +
+        "  message += '*Átila Silva - Rastreamento e Bloqueio Veicular*\\n\\n';" +
+        "  for (const [name, label] of Object.entries(labels)) {" +
+        "    message += '• *' + label + ':* ' + formData.get(name) + '\\n';" +
+        "  }" +
+        "  parent.handleWhatsAppContact(message);" +
+        "});" +
+        "</script></body></html>";
+
+    technicalFormIframe.srcdoc = srcdoc;
+
+    openTechnicalFormIframeButton.addEventListener("click", () => {
+        technicalFormIframeWrapper.classList.remove("hidden");
+        technicalFormIframe.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
 }
 
 // 9. Scroll Reveal (Intersection Observer)

@@ -9,6 +9,47 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+.reviewCard {
+    transition: filter 260ms ease, transform 260ms ease, opacity 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.reviewCard.review-card-active {
+    filter: grayscale(0%);
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.8), 0 18px 40px rgba(37, 99, 235, 0.12);
+    background: linear-gradient(135deg, #eefbff, #f8fafc);
+}
+
+.reviewCard.review-card-muted {
+    filter: grayscale(100%);
+    opacity: 0.82;
+}
+
+.vehicleCard {
+    position: relative;
+    overflow: hidden;
+}
+
+.vehicleCard.vehicle-card-grid-selected {
+    background-color: #eefaff;
+    background-image: radial-gradient(#9bdcff 1px, transparent 1px),
+        radial-gradient(#b8e9ff 1px, transparent 1px),
+        linear-gradient(135deg, rgba(224, 246, 255, 0.5), rgba(215, 242, 255, 0.95));
+    background-size: 16px 16px, 16px 16px, auto;
+    background-position: 0 0, 8px 8px, 0 0;
+    border-color: #8bd3ff;
+    box-shadow: 0 0 0 1px rgba(137, 215, 255, 0.9), 0 14px 30px rgba(34, 211, 238, 0.12);
+}
+
+.vehicleCard.vehicle-card-grid-selected::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 7px, rgba(111, 197, 245, 0.08) 7px),
+        repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(111, 197, 245, 0.08) 7px);
+    pointer-events: none;
+}
+
 
 /* Ocultar barra de rolagem horizontal mantendo deslize fluido */
 
