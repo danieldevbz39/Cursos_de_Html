@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rastreamento Veicular em Uberlândia e Triângulo Mineiro | Átila Silva</title>
-    <meta name="description" content="Rastreamento e bloqueio veicular em Uberlândia e no Triângulo Mineiro. Instalação discreta, monitoramento 24h e suporte técnico direto com Átila Silva." />
+    <meta name="description"
+        content="Rastreamento e bloqueio veicular em Uberlândia e no Triângulo Mineiro. Instalação discreta, monitoramento 24h e suporte técnico direto com Átila Silva." />
     <meta name="author" content="Átila Silva" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#020617" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content="Rastreamento e Bloqueio Veicular | Átila Silva" />
-    <meta property="og:description" content="Proteção para carros, motos, caminhões e frotas no Triângulo Mineiro, com instalação profissional e suporte direto." />
+    <meta property="og:description"
+        content="Proteção para carros, motos, caminhões e frotas no Triângulo Mineiro, com instalação profissional e suporte direto." />
     <meta property="og:site_name" content="Átila Silva Rastreamento Veicular" />
     <meta name="twitter:card" content="summary" />
 
@@ -25,10 +27,13 @@
             "telephone": "+55 34 99929-5603",
             "email": "atilasilvarastreadores@gmail.com",
             "priceRange": "R$ 65,00/mês",
-            "areaServed": [
-                { "@type": "City", "name": "Uberlândia" },
-                { "@type": "AdministrativeArea", "name": "Triângulo Mineiro" }
-            ],
+            "areaServed": [{
+                "@type": "City",
+                "name": "Uberlândia"
+            }, {
+                "@type": "AdministrativeArea",
+                "name": "Triângulo Mineiro"
+            }],
             "serviceType": [
                 "Rastreamento veicular",
                 "Bloqueio veicular",
@@ -43,13 +48,11 @@
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Estilo Customizado Separado -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="acess/style.css" />
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
@@ -57,17 +60,21 @@
     <!-- ===================================================================== -->
     <!-- BARRA SUPERIOR DE AVISO / CONTINGÊNCIA DE CONEXÃO                    -->
     <!-- ===================================================================== -->
-    <div id="contingency-bar" class="hidden bg-amber-600 text-white text-xs font-semibold py-2.5 px-4 sticky top-0 z-[60] shadow-md">
+    <div id="offlineNoticeBar"
+        class="hidden bg-amber-600 text-white text-xs font-semibold py-2.5 px-4 sticky top-0 z-[60] shadow-md">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
             <div class="flex items-center gap-2">
-                <i data-lucide="wifi-off" class="w-4 h-4 animate-bounce"></i>
-                <span><strong>Atenção:</strong> Você parece estar desconectado da internet (offline). Os links de WhatsApp exibirão automaticamente o tratamento com opções de ligação e cópia rápida.</span>
+                
+                <span><strong>Atenção:</strong> Você parece estar desconectado da internet (offline). Os links de
+                    WhatsApp exibirão automaticamente o tratamento com opções de ligação e cópia rápida.</span>
             </div>
             <div class="flex items-center gap-3 shrink-0">
-                <button onclick="openOfflineModal()" class="bg-amber-800 hover:bg-amber-900 text-white px-3 py-1 rounded-md text-[11px] font-bold uppercase transition">
+                <button onclick="openOfflineModal()"
+                    class="bg-amber-800 hover:bg-amber-900 text-white px-3 py-1 rounded-md text-[11px] font-bold uppercase transition">
                     Ver Opções de Contato Offline
                 </button>
-                <a href="tel:34999295603" class="bg-white text-amber-900 hover:bg-slate-100 px-3 py-1 rounded-md text-[11px] font-bold uppercase transition">
+                <a href="tel:34999295603"
+                    class="bg-white text-amber-900 hover:bg-slate-100 px-3 py-1 rounded-md text-[11px] font-bold uppercase transition">
                     Ligar: (34) 99929-5603
                 </a>
             </div>
@@ -75,21 +82,24 @@
     </div>
 
     <!-- STATUS ONLINE NOTIFICATION -->
-    <div id="status-bar" class="bg-slate-950 text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800">
+    <div id="siteStatusBar" class="bg-slate-950 text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center gap-2">
                 <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span class="font-medium text-slate-200">Modo Online: Monitoramento em tempo real • Triângulo Mineiro e Região</span>
+                <span class="font-medium text-slate-200">Modo Online: Monitoramento em tempo real • Triângulo Mineiro e
+                    Região</span>
             </div>
             <div class="flex items-center gap-6">
                 <a href="tel:34999295603" class="hover:text-blue-400 transition flex items-center gap-1.5 font-medium">
-                    <i data-lucide="phone" class="w-3.5 h-3.5 text-blue-400"></i> (34) 99929-5603
+                     (34) 99929-5603
                 </a>
-                <a href="https://wa.me/5534984446573" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1.5 font-medium">
-                    <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i> (34) 98444-6573
+                <a href="https://wa.me/5534984446573" target="_blank"
+                    class="hover:text-emerald-400 transition flex items-center gap-1.5 font-medium">
+                     (34) 98444-6573
                 </a>
             </div>
         </div>
@@ -103,12 +113,14 @@
 
             <!-- Logotipo / Marca -->
             <a href="#inicio" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black text-xl shadow-md shadow-blue-700/25 group-hover:scale-105 transition-transform">
-                    A
-                </div>
+                <img src="source/ATILA SILVA LOG.png" alt="ATILA SILVA LOG"
+                    class="w-25 h-10 object-cover group-hover:scale-105 transition-transform">
                 <div>
-                    <span class="text-base sm:text-lg font-black tracking-tight text-slate-950 block leading-tight">Átila Silva</span>
-                    <span class="text-[10px] font-extrabold tracking-widest text-blue-700 uppercase">Rastreamento &amp; Bloqueio Veicular</span>
+                    <span
+                        class="text-base sm:text-lg font-black tracking-tight text-slate-950 block leading-tight">Átila
+                        Silva</span>
+                    <span class="text-[10px] font-extrabold tracking-widest text-blue-700 uppercase">Rastreamento &amp;
+                        Bloqueio Veicular</span>
                 </div>
             </a>
 
@@ -124,28 +136,36 @@
 
             <!-- Botão CTA Navbar -->
             <div class="hidden sm:flex items-center gap-3">
-                <button onclick="handleWhatsAppContact('Olá Átila! Vim pelo site e gostaria de tirar dúvidas sobre o rastreamento.')" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-extrabold px-5 py-2.5 rounded-lg transition shadow-md shadow-emerald-600/20 flex items-center gap-2">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <button
+                    onclick="handleWhatsAppContact('Olá Átila! Vim pelo site e gostaria de tirar dúvidas sobre o rastreamento.')"
+                    class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs sm:text-sm font-extrabold px-5 py-2.5 rounded-lg transition shadow-md shadow-emerald-600/20 flex items-center gap-2">
+                    
                     <span>Falar no WhatsApp</span>
                 </button>
             </div>
 
             <!-- Hambúrguer Mobile -->
-            <button id="mobile-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+            <button id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"
+                class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100">
+                
             </button>
         </div>
 
         <!-- Dropdown Mobile -->
-        <div id="mobile-menu" class="hidden lg:hidden px-6 py-4 bg-white border-b border-slate-200 space-y-3">
+        <div id="mobileMenu" class="hidden lg:hidden px-6 py-4 bg-white border-b border-slate-200 space-y-3">
             <a href="#inicio" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">Início</a>
-            <a href="#aplicativo" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">O Aplicativo</a>
+            <a href="#aplicativo" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">O
+                Aplicativo</a>
             <a href="#veiculos" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">Veículos</a>
-            <a href="#diferenciais" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">Diferenciais</a>
+            <a href="#diferenciais" class="block font-bold text-slate-700 py-1"
+                onclick="toggleMobileMenu()">Diferenciais</a>
             <a href="#orcamento" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">Orçamento</a>
-            <a href="#depoimentos" class="block font-bold text-slate-700 py-1" onclick="toggleMobileMenu()">Depoimentos</a>
-            <button onclick="handleWhatsAppContact('Olá Átila! Gostaria de falar sobre rastreamento veicular.'); toggleMobileMenu();" class="w-full text-center bg-emerald-600 text-white font-extrabold py-2.5 rounded-lg text-sm flex items-center justify-center gap-2">
-                <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <a href="#depoimentos" class="block font-bold text-slate-700 py-1"
+                onclick="toggleMobileMenu()">Depoimentos</a>
+            <button
+                onclick="handleWhatsAppContact('Olá Átila! Gostaria de falar sobre rastreamento veicular.'); toggleMobileMenu();"
+                class="w-full text-center bg-emerald-600 text-white font-extrabold py-2.5 rounded-lg text-sm flex items-center justify-center gap-2">
+                
                 <span>Falar no WhatsApp</span>
             </button>
         </div>
@@ -153,768 +173,1032 @@
 
     <main>
 
-    <!-- ===================================================================== -->
-    <!-- 2. SEÇÃO PRINCIPAL (HERO)                                            -->
-    <!-- ===================================================================== -->
-    <section id="inicio" class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white py-14 lg:py-24 overflow-hidden">
+        <!-- ===================================================================== -->
+        <!-- 2. SEÇÃO PRINCIPAL (HERO)                                            -->
+        <!-- ===================================================================== -->
+        <section id="inicio"
+            class="relative bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white pt-4 pb-14 lg:pt-8 lg:pb-24 overflow-hidden">
 
-        <!-- Background Grid e Radar Visual -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        <div class="absolute top-1/4 -left-20 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Background Grid e Radar Visual -->
+            <div
+                class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]">
+            </div>
+            <div class="absolute top-1/4 -left-20 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none">
+            </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-            <!-- Coluna de Texto & Pitch -->
-            <div class="lg:col-span-7 space-y-6 reveal-elem">
+                <!-- Coluna de Texto & Pitch -->
+                <div class="lg:col-span-7 space-y-6 reveal-elem">
 
-                <!-- Selo Superior -->
-                <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
-                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span> Átila Silva • Técnico Especializado em Rastreamento
+                    <!-- Selo Superior -->
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span> Átila Silva • Técnico
+                        Especializado em Rastreamento
+                    </div>
+
+                    <!-- Título Principal -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
+                        NÃO DEIXE SEU VEÍCULO SAIR DO SEU CONTROLE!
+                    </h1>
+
+                    <!-- Subtítulo -->
+                    <p class="text-slate-300 text-base sm:text-lg font-medium leading-relaxed max-w-2xl">
+                        Rastreamento e bloqueio veicular com precisão satelital em tempo real, corte imediato de
+                        combustível e monitoramento com suporte técnico humanizado.
+                    </p>
+
+                    <!-- Destaque de Preço -->
+                    <div
+                        class="p-4 sm:p-5 rounded-2xl glass-panel border border-white/10 max-w-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <span
+                                class="text-[11px] uppercase tracking-wider text-amber-300 font-extrabold block">Condição
+                                Especial</span>
+                            <div class="text-2xl sm:text-3xl font-black text-white">
+                                Valores a partir de <span class="text-amber-400">R$ 65,00</span> por mês
+                            </div>
+                            <p class="text-xs text-slate-300 mt-0.5">Sem fidelidade abusiva • Instalação discreta e
+                                rápida
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação Hero -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button
+                            onclick="handleWhatsAppContact('Olá Átila! Quero agendar a instalação do rastreador no meu veículo.')"
+                            class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm px-6 py-4 rounded-xl transition shadow-xl shadow-emerald-600/30 flex items-center gap-2">
+                            
+                            <span>Falar no WhatsApp ((34) 99929-5603)</span>
+                        </button>
+                        <a href="#orcamento"
+                            class="bg-white/10 hover:bg-white/20 active:scale-95 text-white font-bold text-sm px-6 py-4 rounded-xl transition border border-white/20 flex items-center gap-2">
+                            
+                            <span>Simular Orçamento Online</span>
+                        </a>
+                    </div>
+
                 </div>
 
-                <!-- Título Principal -->
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
-                    NÃO DEIXE SEU VEÍCULO SAIR DO SEU CONTROLE!
-                </h1>
+                <!-- Coluna Visual: Radar Interativo & Badges -->
+                <div class="lg:col-span-5 relative flex justify-center reveal-elem">
+                    <div
+                        class="relative w-72 h-72 sm:w-88 sm:h-88 rounded-full border border-blue-500/20 bg-gradient-to-tr from-slate-900 to-blue-900/40 p-8 flex items-center justify-center shadow-2xl">
 
-                <!-- Subtítulo -->
-                <p class="text-slate-300 text-base sm:text-lg font-medium leading-relaxed max-w-2xl">
-                    Rastreamento e bloqueio veicular com precisão satelital em tempo real, corte imediato de combustível e monitoramento com suporte técnico humanizado.
-                </p>
-
-                <!-- Destaque de Preço -->
-                <div class="p-4 sm:p-5 rounded-2xl glass-panel border border-white/10 max-w-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div>
-                        <span class="text-[11px] uppercase tracking-wider text-amber-300 font-extrabold block">Condição Especial</span>
-                        <div class="text-2xl sm:text-3xl font-black text-white">
-                            Valores a partir de <span class="text-amber-400">R$ 65,00</span> por mês
+                        <!-- Ondas do Radar -->
+                        <span
+                            class="animate-radar-1 absolute w-full h-full rounded-full border border-blue-400/40"></span>
+                        <span
+                            class="animate-radar-2 absolute w-full h-full rounded-full border border-blue-400/40"></span>
+                        <div
+                            class="w-32 h-32 rounded-full bg-blue-600/20 border border-blue-400/30 flex items-center justify-center">
+                            
                         </div>
-                        <p class="text-xs text-slate-300 mt-0.5">Sem fidelidade abusiva • Instalação discreta e rápida</p>
+
+                        <!-- Badges Flutuantes de Destaque -->
+                        <div class="card">
+                            
+                            <div
+                                class="absolute -top-4 -left-6 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
+                                <img src="source/Vans&Utilitários.jpg" alt="Localização" class="w-4 h-4 text-emerald-400 object-cover rounded-sm">
+                                <div>
+                                    <p class="font-extrabold text-white text-[11px]">Localização Exata</p>
+                                    <p class="text-[10px] text-slate-400">GPS Satelital em tempo real</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-4 -left-4 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
+                            <img src="source/Frotas%20Comerciais.jpeg" alt="Bloqueio" class="w-4 h-4 text-amber-400 object-cover rounded-sm">
+                            <div>
+                                <p class="font-extrabold text-white text-[11px]">Bloqueio Seguro</p>
+                                <p class="text-[10px] text-slate-400">Corte de ignição pelo celular</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute top-1/2 -right-10 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
+                            <img src="source/Maquin%C3%A1rios%20Agricolas.jpeg" alt="Relógio" class="w-4 h-4 text-blue-400 object-cover rounded-sm">
+                            <div>
+                                <p class="font-extrabold text-white text-[11px]">Monitoramento 24h</p>
+                                <p class="text-[10px] text-slate-400">Proteção contínua e suporte</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Botões de Ação Hero -->
-                <div class="flex flex-wrap items-center gap-4 pt-2">
-                    <button onclick="handleWhatsAppContact('Olá Átila! Quero agendar a instalação do rastreador no meu veículo.')" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm px-6 py-4 rounded-xl transition shadow-xl shadow-emerald-600/30 flex items-center gap-2">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span>Falar no WhatsApp ((34) 99929-5603)</span>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 3. FAIXA DE CATEGORIAS ATENDIDAS (SEM A BARRA CINZA / NO-SCROLLBAR)   -->
+        <!-- ===================================================================== -->
+        <section class="category-menu bg-white text-slate-950 py-4 overflow-hidden shadow-inner border-y border-blue-100"
+            aria-label="Categorias de veículos atendidos">
+            <div class="marquee-track text-xs sm:text-sm font-bold" aria-hidden="true">
+                <div class="marquee-group flex items-center gap-6 px-4 sm:px-8 whitespace-nowrap">
+                    <div class="flex items-center gap-2"><img src="source/Carros&amp;SUVs.png" alt="Carros e SUVs" class="category-image-icon"> Carros
+                        &amp; SUVs</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Caminhões%20%26%20Pesados.png" alt="Caminhões e pesados" class="category-image-icon">
+                        Caminhões &amp; Pesados</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Motocicletas.png" alt="Motocicletas" class="category-image-icon">
+                        Motocicletas
+                    </div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Vans%26Utilit%C3%A1rios.jpg" alt="Vans e utilitários" class="category-image-icon"> Vans
+                        &amp; Utilitários</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Frotas%20Comerciais.jpeg" alt="Frotas comerciais" class="category-image-icon">
+                        Frotas Comerciais</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Maquin%C3%A1rios%20Agricolas.jpeg" alt="Maquinários agrícolas" class="category-image-icon">
+                        Maquinários Agrícolas</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <a href="#veiculos"
+                        class="underline hover:text-slate-700 flex items-center gap-1 font-extrabold pointer-events-auto">
+                        <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="" class="flaticon-category-icon category-arrow-icon">
+                        Ver Modelos
+                    </a>
+                </div>
+                <div class="marquee-group flex items-center gap-6 px-4 sm:px-8 whitespace-nowrap" aria-hidden="true">
+                    <div class="flex items-center gap-2"><img src="source/Carros&amp;SUVs.png" alt="Carros e SUVs" class="category-image-icon"> Carros
+                        &amp; SUVs</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Caminhões%20%26%20Pesados.png" alt="Caminhões e pesados" class="category-image-icon">
+                        Caminhões &amp; Pesados</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Motocicletas.png" alt="Motocicletas" class="category-image-icon">
+                        Motocicletas
+                    </div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Vans%26Utilit%C3%A1rios.jpg" alt="Vans e utilitários" class="category-image-icon"> Vans
+                        &amp; Utilitários</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Frotas%20Comerciais.jpeg" alt="Frotas comerciais" class="category-image-icon">
+                        Frotas Comerciais</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <div class="flex items-center gap-2"><img src="source/Maquin%C3%A1rios%20Agricolas.jpeg" alt="Maquinários agrícolas" class="category-image-icon">
+                        Maquinários Agrícolas</div>
+                    <span class="text-blue-700">&bull;</span>
+                    <a href="#veiculos"
+                        class="underline hover:text-slate-700 flex items-center gap-1 font-extrabold pointer-events-auto">
+                        <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="" class="flaticon-category-icon category-arrow-icon">
+                        Ver Modelos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 4. MOSTRUÁRIO DO APLICATIVO MÓVEL (APP SHOWCASE)                     -->
+        <!-- ===================================================================== -->
+        <section id="aplicativo" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Coluna Mockup Interativo do Smartphone -->
+                <div class="lg:col-span-5 flex justify-center reveal-elem">
+                    <div
+                        class="w-72 sm:w-80 rounded-[44px] bg-slate-950 p-3.5 shadow-2xl border-4 border-slate-800 relative">
+                        <!-- Câmera Notch -->
+                        <div class="w-28 h-4 bg-slate-800 rounded-b-xl mx-auto mb-2"></div>
+
+                        <!-- Tela do App -->
+                        <div class="bg-slate-900 rounded-[34px] p-5 text-white space-y-4 border border-slate-800">
+                            <!-- Header do App -->
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                                    <span class="text-xs font-bold">Rastreamento Ativo</span>
+                                </div>
+                                <span class="text-[10px] text-slate-400 font-mono">Sinal 100% (GPS)</span>
+                            </div>
+
+                            <!-- Card Veículo Selecionado -->
+                            <div class="p-3 bg-slate-800/80 rounded-2xl border border-slate-700">
+                                <div class="flex justify-between items-center text-xs">
+                                    <span class="font-extrabold text-blue-400">Toyota Hilux 2023</span>
+                                    <span id="appVehicleStatus"
+                                        class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-bold">Ignição
+                                        Ligada</span>
+                                </div>
+                                <p class="text-[11px] text-slate-400 mt-1">Velocidade: <span
+                                        class="font-bold text-white">42 km/h</span> • Bateria: <span
+                                        class="text-emerald-400">12.8V</span></p>
+                            </div>
+
+                            <!-- Botão de Interação Rápida no Mockup -->
+                            <div class="space-y-2">
+                                <button id="vehicleIgnitionButton" onclick="simulateVehicleLock()"
+                                    class="w-full py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-black text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30">
+                                    
+                                    <span id="vehicleLockButtonText">BLOQUEAR VEÍCULO AGORA</span>
+                                </button>
+                                <div id="vehicleMockStatus"
+                                    class="text-[11px] text-center text-slate-400 font-medium h-4">
+                                    Toque no botão para simular o corte
+                                </div>
+                            </div>
+
+                            <!-- Lista de Telemetria no App -->
+                            <div class="space-y-2 text-xs pt-1">
+                                <div class="flex justify-between py-1.5 border-b border-slate-800 text-slate-300">
+                                    <span>Cerca Virtual:</span>
+                                    <span class="font-bold text-emerald-400">Ativa (Perímetro 2km)</span>
+                                </div>
+                                <div class="flex justify-between py-1.5 border-b border-slate-800 text-slate-300">
+                                    <span>Última Transmissão:</span>
+                                    <span class="font-bold text-slate-200">Agora mesmo (Há 3s)</span>
+                                </div>
+                                <div class="flex justify-between py-1.5 text-slate-300">
+                                    <span>Endereço Atual:</span>
+                                    <span class="font-bold text-slate-200">Uberlândia / MG</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna de Recursos do Aplicativo -->
+                <div class="lg:col-span-7 space-y-6 reveal-elem">
+                    <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Tecnologia na Palma da sua
+                        Mão</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 leading-tight">
+                        Seu veículo 100% sob controle direto pelo smartphone
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Com nossa plataforma moderna e intuitiva, você tem acesso imediato à telemetria, rotas
+                        percorridas e comandos de segurança com resposta em segundos.
+                    </p>
+
+                    <!-- Bullet Points de Recursos do Aplicativo -->
+                    <ul class="space-y-3.5 pt-2">
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                                
+                            </div>
+                            <span class="text-sm text-slate-700 font-semibold">Localização satelital em tempo real com
+                                atualização contínua de posição.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                                
+                            </div>
+                            <span class="text-sm text-slate-700 font-semibold">Bloqueio e desbloqueio do veículo com 1
+                                toque na tela.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                                
+                            </div>
+                            <span class="text-sm text-slate-700 font-semibold">Histórico detalhado de trajetos, paradas
+                                e velocidades atingidas.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                                
+                            </div>
+                            <span class="text-sm text-slate-700 font-semibold">Alertas de ignição ligada/desligada e
+                                alertas de cerca virtual.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
+                                
+                            </div>
+                            <span class="text-sm text-slate-700 font-semibold">Indicador de status de ignição, nível de
+                                bateria e sinal GPS.</span>
+                        </li>
+                    </ul>
+
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <button
+                            onclick="handleWhatsAppContact('Olá Átila! Quero testar uma demonstração do app de rastreamento veicular.')"
+                            class="bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm px-7 py-3.5 rounded-xl transition shadow-lg shadow-blue-700/20 flex items-center gap-2">
+                            
+                            <span>Solicitar Demonstração do App</span>
+                        </button>
+                        <span class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
+                             Compatível com Android e iOS
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 5. FROTA E MODELOS ATENDIDOS (VEHICLE FLEET)                         -->
+        <!-- ===================================================================== -->
+        <section id="veiculos" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+
+                <div class="text-center max-w-2xl mx-auto mb-10 reveal-elem">
+                    <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Compatibilidade
+                        Total</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">Proteção sob medida para qualquer
+                        tipo de veículo</h2>
+                </div>
+
+                <!-- Filtros de Categoria -->
+                <div class="flex flex-wrap justify-center items-center gap-2 mb-10 reveal-elem">
+                    <button type="button" onclick="filterVehicles('all', this)"
+                        class="vehicleFilterButton active bg-slate-900 text-white text-xs font-bold px-5 py-2.5 rounded-full transition">Todos</button>
+                    <button type="button" onclick="filterVehicles('car', this)"
+                        class="vehicleFilterButton bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200">Carros
+                        de Passeio</button>
+                    <button type="button" onclick="filterVehicles('moto', this)"
+                        class="vehicleFilterButton bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200">Motos</button>
+                    <button type="button" onclick="filterVehicles('truck', this)"
+                        class="vehicleFilterButton bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200">Caminhões
+                        &amp; Frotas</button>
+                </div>
+
+                <!-- Grid de Modelos em Destaque -->
+                <div id="vehicles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Modelo 1: Carros de Passeio -->
+                    <div
+                        class="vehicleCard car p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
+                                <img src="source/Carros&SUVs.png" alt="Carro" class="w-6 h-6 object-cover rounded-sm">
+                            </div>
+                            <h3 class="text-xl font-black text-slate-950">Carros de Passeio &amp; SUVs</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                Instalação oculta e não invasiva, ideal para sedãs, hatches e SUVs de todas as marcas.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs font-semibold text-slate-700">
+                                <p class="flex items-center gap-2"> Bloqueio anti-furto imediato</p>
+                                <p class="flex items-center gap-2"> Alerta de ignição</p>
+                                <p class="flex items-center gap-2"> Histórico de viagens</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 font-bold block uppercase">Condição</span>
+                                <span class="text-sm font-black text-blue-700">A partir de R$ 65,00/mês</span>
+                            </div>
+                            <button
+                                onclick="handleWhatsAppContact('Olá Átila! Quero cotar rastreamento para Carro de Passeio/SUV.')"
+                                class="text-xs font-extrabold text-slate-950 hover:text-blue-700 flex items-center gap-1 transition">
+                                Cotar &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modelo 2: Motocicletas -->
+                    <div
+                        class="vehicleCard moto p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
+                                <img src="source/Motocicletas.png" alt="Moto" class="w-6 h-6 object-cover rounded-sm">
+                            </div>
+                            <h3 class="text-xl font-black text-slate-950">Motocicletas &amp; Scooters</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                Módulos ultra-compactos e resistentes à água, consumo de bateria otimizado.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs font-semibold text-slate-700">
+                                <p class="flex items-center gap-2"> Sensor de movimento e reboque</p>
+                                <p class="flex items-center gap-2"> Bloqueio pelo app</p>
+                                <p class="flex items-center gap-2"> Cerca virtual rápida</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 font-bold block uppercase">Condição</span>
+                                <span class="text-sm font-black text-blue-700">A partir de R$ 65,00/mês</span>
+                            </div>
+                            <button
+                                onclick="handleWhatsAppContact('Olá Átila! Quero cotar rastreamento para Motocicleta.')"
+                                class="text-xs font-extrabold text-slate-950 hover:text-blue-700 flex items-center gap-1 transition">
+                                Cotar &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modelo 3: Caminhões e Frotas -->
+                    <div
+                        class="vehicleCard truck p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
+                                <img src="source/Caminh%C3%B5es%20%26%20Pesados.png" alt="Caminhão" class="w-6 h-6 object-cover rounded-sm">
+                            </div>
+                            <h3 class="text-xl font-black text-slate-950">Caminhões, Tratores &amp; Frotas</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                Telemetria robusta para veículos pesados, caminhões baú, carretas e maquinário rural.
+                            </p>
+                            <div
+                                class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs font-semibold text-slate-700">
+                                <p class="flex items-center gap-2"> Monitoramento 24h contínuo</p>
+                                <p class="flex items-center gap-2"> Controle de rotas</p>
+                                <p class="flex items-center gap-2"> Suporte direto com o técnico</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 font-bold block uppercase">Condição</span>
+                                <span class="text-sm font-black text-blue-700">Sob consulta / Sob medida</span>
+                            </div>
+                            <button
+                                onclick="handleWhatsAppContact('Olá Átila! Quero cotar rastreamento para Caminhão/Frota.')"
+                                class="text-xs font-extrabold text-slate-950 hover:text-blue-700 flex items-center gap-1 transition">
+                                Cotar &rarr;
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Outros Modelos Atendidos -->
+                <div
+                    class="mt-12 p-6 rounded-2xl bg-white border border-slate-200 flex flex-wrap justify-between items-center gap-6">
+                    <div>
+                        <h4 class="font-extrabold text-sm text-slate-900">Também Atendemos com Instalação Especializada:
+                        </h4>
+                        <div class="flex flex-wrap items-center gap-2 mt-3">
+                            <span class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 rounded-full px-3 py-2">
+                                <img src="source/Vans&Utilitários.jpg" alt="Vans e utilitários" class="w-6 h-6 object-cover rounded-full">
+                                Vans &amp; Utilitários
+                            </span>
+                            <span class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 rounded-full px-3 py-2">
+                                <img src="source/Caminh%C3%B5es%20%26%20Pesados.png" alt="Caminhonetes e pick-ups" class="w-6 h-6 object-cover rounded-full">
+                                Caminhonetes &amp; Pick-ups
+                            </span>
+                            <span class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 rounded-full px-3 py-2">
+                                <img src="source/Carros&SUVs.png" alt="Embarcações e jet-skis" class="w-6 h-6 object-cover rounded-full">
+                                Embarcações &amp; Jet-Skis
+                            </span>
+                            <span class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-200 rounded-full px-3 py-2">
+                                <img src="source/Maquin%C3%A1rios%20Agricolas.jpeg" alt="Máquinas agrícolas" class="w-6 h-6 object-cover rounded-full">
+                                Máquinas Agrícolas
+                            </span>
+                        </div>
+                    </div>
+                    <button
+                        onclick="handleWhatsAppContact('Olá Átila! Meu modelo de veículo é específico, gostaria de saber se é compatível.')"
+                        class="bg-slate-950 hover:bg-black text-white text-xs font-bold px-5 py-3 rounded-xl transition shrink-0">
+                        Consultar proteção para seu modelo no WhatsApp &rarr;
                     </button>
-                    <a href="#orcamento" class="bg-white/10 hover:bg-white/20 active:scale-95 text-white font-bold text-sm px-6 py-4 rounded-xl transition border border-white/20 flex items-center gap-2">
-                        <i data-lucide="calculator" class="w-4 h-4 text-blue-400"></i>
-                        <span>Simular Orçamento Online</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 6. DIFERENCIAIS EXCLUSIVOS (KEY FEATURES)                            -->
+        <!-- ===================================================================== -->
+        <section id="diferenciais" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-14 reveal-elem">
+                    <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Cuidando do Seu
+                        Patrimônio</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">Diferenciais Exclusivos</h2>
+                    <p class="text-slate-600 text-sm mt-3">
+                        Todos os itens que você tem garantidos com a contratação de Átila Silva - Técnico Especializado
+                        em rastreamento e bloqueio veicular.
+                    </p>
+                </div>
+
+                <!-- Os 6 Diferenciais Oficiais do Panfleto -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- 1. Localização exata -->
+                    <div class="feature-card feature-card-location p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="feature-card-icon w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <svg class="feature-icon-svg" viewBox="0 0 24 24" aria-label="Localização exata" role="img">
+                                    <path d="M12 21s-8-8.7-8-13a8 8 0 0 1 16 0c0 4.3-8 13-8 13z"></path>
+                                    <circle cx="12" cy="8" r="3"></circle>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2.5 py-1 rounded">GPS
+                                Satelital</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950">Localização exata</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Precisão satelital em tempo real com mapa detalhado, rotas e alertas no aplicativo.
+                        </p>
+                    </div>
+
+                    <!-- 2. Bloqueio seguro -->
+                    <div class="feature-card feature-card-lock p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="feature-card-icon w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <svg class="feature-icon-svg" viewBox="0 0 24 24" aria-label="Bloqueio seguro" role="img">
+                                    <path d="M5 11h14v9H5z"></path>
+                                    <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+                                    <path d="M12 14h.01"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Corte
+                                Imediato</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950">Bloqueio seguro</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Corte imediato de ignição e combustível acionado diretamente pelo seu celular.
+                        </p>
+                    </div>
+
+                    <!-- 3. Monitoramento 24h / técnico -->
+                    <div class="feature-card feature-card-monitoring p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="feature-card-icon w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <svg class="feature-icon-svg" viewBox="0 0 24 24" aria-label="Monitoramento 24h" role="img">
+                                    <path d="M12 7a5 5 0 1 0 5 5"></path>
+                                    <path d="M12 3a9 9 0 1 0 9 9"></path>
+                                    <path d="M12 12l4-4"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2.5 py-1 rounded">24
+                                Horas</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950">Monitoramento 24h / técnico</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Supervisão contínua 24 horas por dia para garantir a proteção do seu patrimônio.
+                        </p>
+                    </div>
+
+                    <!-- 4. Instalação rápida -->
+                    <div class="feature-card feature-card-install p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="feature-card-icon w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <svg class="feature-icon-svg" viewBox="0 0 24 24" aria-label="Instalação rápida" role="img">
+                                    <path d="M14 3l7 7-4 4-7-7z"></path>
+                                    <path d="M7 14l-3 3 4 4 3-3"></path>
+                                    <path d="M16 19l3-3"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">Discreto</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950">Instalação rápida</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Atendimento ágil com instalação profissional, discreta e sem danos à parte elétrica.
+                        </p>
+                    </div>
+
+                    <!-- 5. Qualidade e segurança -->
+                    <div class="feature-card feature-card-quality p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="feature-card-icon w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <svg class="feature-icon-svg" viewBox="0 0 24 24" aria-label="Qualidade e segurança" role="img">
+                                    <path d="M12 3l8 4v5c0 5.5-3 8.5-8 10-5-1.5-8-4.5-8-10V7z"></path>
+                                    <path d="M9 12l2 2 4-5"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2.5 py-1 rounded">Homologado</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950">Qualidade e segurança</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Módulos homologados de alta durabilidade e confiabilidade comprovada.
+                        </p>
+                    </div>
+
+                    <!-- 6. Suporte técnico -->
+                    <div class="feature-card feature-card-support p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="feature-card-icon w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                                <svg class="feature-icon-svg" viewBox="0 0 24 24" aria-label="Suporte técnico" role="img">
+                                    <path d="M4 13a8 8 0 0 1 16 0"></path>
+                                    <path d="M6 18a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4"></path>
+                                    <path d="M7 11v-1a5 5 0 0 1 10 0v1"></path>
+                                </svg>
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded">Átila
+                                Silva</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-950">Suporte técnico</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Atendimento humanizado e direto com Átila Silva - Técnico Especializado.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 7. BANNER ESCURO DE CHAMADA PARA AÇÃO (DARK CTA BANNER)               -->
+        <!-- ===================================================================== -->
+        <section class="py-16 bg-slate-950 text-white relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-8 text-center relative z-10 space-y-6 reveal-elem">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
+                    Proteja seu patrimônio com quem entende de verdade
+                </h2>
+                <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+                    Instalação rápida e especializada em carros, motos, caminhões e frotas. Fale diretamente com Átila
+                    Silva e tenha a tranquilidade que você e sua família merecem.
+                </p>
+
+                <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
+                    <button onclick="handleWhatsAppContact('Olá Átila! Quero proteger meu veículo agora mesmo.')"
+                        class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold px-8 py-4 rounded-xl transition shadow-xl shadow-emerald-600/25 flex items-center gap-2 text-sm uppercase tracking-wide">
+                        
+                        <span>Chamar no WhatsApp ((34) 99929-5603)</span>
+                    </button>
+                    <a href="tel:34984446573"
+                        class="bg-white/10 hover:bg-white/20 active:scale-95 text-white font-bold px-7 py-4 rounded-xl transition border border-white/20 flex items-center gap-2 text-sm">
+                        
+                        <span>Ligar: (34) 98444-6573</span>
                     </a>
                 </div>
 
-            </div>
-
-            <!-- Coluna Visual: Radar Interativo & Badges -->
-            <div class="lg:col-span-5 relative flex justify-center reveal-elem">
-                <div class="relative w-72 h-72 sm:w-88 sm:h-88 rounded-full border border-blue-500/20 bg-gradient-to-tr from-slate-900 to-blue-900/40 p-8 flex items-center justify-center shadow-2xl">
-
-                    <!-- Ondas do Radar -->
-                    <span class="animate-radar-1 absolute w-full h-full rounded-full border border-blue-400/40"></span>
-                    <span class="animate-radar-2 absolute w-full h-full rounded-full border border-blue-400/40"></span>
-                    <div class="w-32 h-32 rounded-full bg-blue-600/20 border border-blue-400/30 flex items-center justify-center">
-                        <i data-lucide="shield-check" class="w-14 h-14 text-blue-400"></i>
-                    </div>
-
-                    <!-- Badges Flutuantes de Destaque -->
-                    <div class="absolute -top-4 -left-6 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
-                        <div>
-                            <p class="font-extrabold text-white text-[11px]">Localização Exata</p>
-                            <p class="text-[10px] text-slate-400">GPS Satelital em tempo real</p>
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-4 -left-4 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                        <i data-lucide="lock" class="w-4 h-4 text-amber-400"></i>
-                        <div>
-                            <p class="font-extrabold text-white text-[11px]">Bloqueio Seguro</p>
-                            <p class="text-[10px] text-slate-400">Corte de ignição pelo celular</p>
-                        </div>
-                    </div>
-
-                    <div class="absolute top-1/2 -right-10 bg-slate-900/90 border border-slate-700 text-xs px-3.5 py-2 rounded-xl shadow-xl backdrop-blur-md flex items-center gap-2">
-                        <i data-lucide="clock" class="w-4 h-4 text-blue-400"></i>
-                        <div>
-                            <p class="font-extrabold text-white text-[11px]">Monitoramento 24h</p>
-                            <p class="text-[10px] text-slate-400">Proteção contínua e suporte</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 3. FAIXA DE CATEGORIAS ATENDIDAS (SEM A BARRA CINZA / NO-SCROLLBAR)   -->
-    <!-- ===================================================================== -->
-    <section class="bg-blue-700 text-white py-4 overflow-hidden shadow-inner" aria-label="Categorias de veículos atendidos">
-        <div class="marquee-track text-xs sm:text-sm font-bold" aria-hidden="true">
-            <div class="marquee-group flex items-center gap-6 px-4 sm:px-8 whitespace-nowrap">
-                <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-blue-200"></i> Carros &amp; SUVs</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="truck" class="w-4 h-4 text-blue-200"></i> Caminhões &amp; Pesados</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="bike" class="w-4 h-4 text-blue-200"></i> Motocicletas</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="bus" class="w-4 h-4 text-blue-200"></i> Vans &amp; Utilitários</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4 text-blue-200"></i> Frotas Comerciais</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="tractor" class="w-4 h-4 text-blue-200"></i> Maquinários Agrícolas</div>
-                <span class="text-blue-400">&bull;</span>
-                <a href="#veiculos" class="underline hover:text-blue-200 flex items-center gap-1 font-extrabold pointer-events-auto">Ver Modelos &rarr;</a>
-            </div>
-            <div class="marquee-group flex items-center gap-6 px-4 sm:px-8 whitespace-nowrap" aria-hidden="true">
-                <div class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-blue-200"></i> Carros &amp; SUVs</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="truck" class="w-4 h-4 text-blue-200"></i> Caminhões &amp; Pesados</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="bike" class="w-4 h-4 text-blue-200"></i> Motocicletas</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="bus" class="w-4 h-4 text-blue-200"></i> Vans &amp; Utilitários</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4 text-blue-200"></i> Frotas Comerciais</div>
-                <span class="text-blue-400">&bull;</span>
-                <div class="flex items-center gap-2"><i data-lucide="tractor" class="w-4 h-4 text-blue-200"></i> Maquinários Agrícolas</div>
-                <span class="text-blue-400">&bull;</span>
-                <a href="#veiculos" class="underline hover:text-blue-200 flex items-center gap-1 font-extrabold pointer-events-auto">Ver Modelos &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 4. MOSTRUÁRIO DO APLICATIVO MÓVEL (APP SHOWCASE)                     -->
-    <!-- ===================================================================== -->
-    <section id="aplicativo" class="py-20 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-            <!-- Coluna Mockup Interativo do Smartphone -->
-            <div class="lg:col-span-5 flex justify-center reveal-elem">
-                <div class="w-72 sm:w-80 rounded-[44px] bg-slate-950 p-3.5 shadow-2xl border-4 border-slate-800 relative">
-                    <!-- Câmera Notch -->
-                    <div class="w-28 h-4 bg-slate-800 rounded-b-xl mx-auto mb-2"></div>
-
-                    <!-- Tela do App -->
-                    <div class="bg-slate-900 rounded-[34px] p-5 text-white space-y-4 border border-slate-800">
-                        <!-- Header do App -->
-                        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                            <div class="flex items-center gap-2">
-                                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                                <span class="text-xs font-bold">Rastreamento Ativo</span>
-                            </div>
-                            <span class="text-[10px] text-slate-400 font-mono">Sinal 100% (GPS)</span>
-                        </div>
-
-                        <!-- Card Veículo Selecionado -->
-                        <div class="p-3 bg-slate-800/80 rounded-2xl border border-slate-700">
-                            <div class="flex justify-between items-center text-xs">
-                                <span class="font-extrabold text-blue-400">Toyota Hilux 2023</span>
-                                <span id="app-vehicle-status" class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-bold">Ignição Ligada</span>
-                            </div>
-                            <p class="text-[11px] text-slate-400 mt-1">Velocidade: <span class="font-bold text-white">42 km/h</span> • Bateria: <span class="text-emerald-400">12.8V</span></p>
-                        </div>
-
-                        <!-- Botão de Interação Rápida no Mockup -->
-                        <div class="space-y-2">
-                            <button id="toggle-ignition-btn" onclick="simulateVehicleLock()" class="w-full py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-black text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-rose-600/30">
-                                <i data-lucide="power" class="w-4 h-4"></i>
-                                <span id="lock-btn-text">BLOQUEAR VEÍCULO AGORA</span>
-                            </button>
-                            <div id="mock-status-msg" class="text-[11px] text-center text-slate-400 font-medium h-4">
-                                Toque no botão para simular o corte
-                            </div>
-                        </div>
-
-                        <!-- Lista de Telemetria no App -->
-                        <div class="space-y-2 text-xs pt-1">
-                            <div class="flex justify-between py-1.5 border-b border-slate-800 text-slate-300">
-                                <span>Cerca Virtual:</span>
-                                <span class="font-bold text-emerald-400">Ativa (Perímetro 2km)</span>
-                            </div>
-                            <div class="flex justify-between py-1.5 border-b border-slate-800 text-slate-300">
-                                <span>Última Transmissão:</span>
-                                <span class="font-bold text-slate-200">Agora mesmo (Há 3s)</span>
-                            </div>
-                            <div class="flex justify-between py-1.5 text-slate-300">
-                                <span>Endereço Atual:</span>
-                                <span class="font-bold text-slate-200">Uberlândia / MG</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Coluna de Recursos do Aplicativo -->
-            <div class="lg:col-span-7 space-y-6 reveal-elem">
-                <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Tecnologia na Palma da sua Mão</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-950 leading-tight">
-                    Seu veículo 100% sob controle direto pelo smartphone
-                </h2>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Com nossa plataforma moderna e intuitiva, você tem acesso imediato à telemetria, rotas percorridas e comandos de segurança com resposta em segundos.
+                <p class="text-xs text-slate-400 font-medium pt-2">
+                    Atendimento ágil para todo o Triângulo Mineiro e região • Mensalidades a partir de R$65,00
                 </p>
+            </div>
+        </section>
 
-                <!-- Bullet Points de Recursos do Aplicativo -->
-                <ul class="space-y-3.5 pt-2">
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                            <i data-lucide="check" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-sm text-slate-700 font-semibold">Localização satelital em tempo real com atualização contínua de posição.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                            <i data-lucide="check" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-sm text-slate-700 font-semibold">Bloqueio e desbloqueio do veículo com 1 toque na tela.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                            <i data-lucide="check" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-sm text-slate-700 font-semibold">Histórico detalhado de trajetos, paradas e velocidades atingidas.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                            <i data-lucide="check" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-sm text-slate-700 font-semibold">Alertas de ignição ligada/desligada e alertas de cerca virtual.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                            <i data-lucide="check" class="w-4 h-4"></i>
-                        </div>
-                        <span class="text-sm text-slate-700 font-semibold">Indicador de status de ignição, nível de bateria e sinal GPS.</span>
-                    </li>
-                </ul>
+        <!-- ===================================================================== -->
+        <!-- 8. SIMULADOR DE COTAÇÃO RÁPIDA (QUICK QUOTE SECTION)                  -->
+        <!-- ===================================================================== -->
+        <section id="orcamento" class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-8">
 
-                <div class="pt-4 flex flex-wrap items-center gap-4">
-                    <button onclick="handleWhatsAppContact('Olá Átila! Quero testar uma demonstração do app de rastreamento veicular.')" class="bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm px-7 py-3.5 rounded-xl transition shadow-lg shadow-blue-700/20 flex items-center gap-2">
-                        <i data-lucide="smartphone" class="w-4 h-4"></i>
-                        <span>Solicitar Demonstração do App</span>
+                <div class="text-center max-w-2xl mx-auto mb-12 reveal-elem">
+                    <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Simulador Exclusivo</span>
+                    <h2 class="text-3xl font-black text-slate-950 mt-1">Faça uma cotação rápida</h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2">
+                        Preencha as informações do seu veículo para receber uma proposta personalizada direto no
+                        WhatsApp.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/80 reveal-elem">
+                    <form id="quoteForm" onsubmit="generateQuote(event)" class="space-y-6">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Tipo de Veículo -->
+                            <div>
+                                <label for="quoteVehicleType"
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tipo de
+                                    Veículo</label>
+                                <select id="quoteVehicleType" required
+                                    class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white font-medium">
+                                    <option value="Carro de Passeio">Carro de Passeio</option>
+                                    <option value="Motocicleta">Motocicleta</option>
+                                    <option value="Caminhão / Pesado">Caminhão / Pesado</option>
+                                    <option value="Van / Utilitário">Van / Utilitário</option>
+                                    <option value="Frota (múltiplos veículos)">Frota (múltiplos veículos)</option>
+                                    <option value="Máquina Agrícola">Máquina Agrícola</option>
+                                </select>
+                            </div>
+
+                            <!-- Modelo / Ano -->
+                            <div>
+                                <label for="quoteModel"
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Modelo
+                                    / Ano do Veículo</label>
+                                <input type="text" id="quoteModel" required
+                                    placeholder="Ex: Toyota Hilux 2023, Honda Fan 160, Scania R440"
+                                    class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white transition" />
+                            </div>
+
+                            <!-- Nome do Solicitante -->
+                            <div>
+                                <label for="quoteName"
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Seu
+                                    Nome Completo</label>
+                                <input type="text" id="quoteName" required placeholder="Digite seu nome"
+                                    class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white transition" />
+                            </div>
+
+                            <!-- Serviço Desejado -->
+                            <div>
+                                <label for="quoteService"
+                                    class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Serviço
+                                    Desejado</label>
+                                <select id="quoteService" required
+                                    class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white font-medium">
+                                    <option value="Rastreamento + Bloqueio Veicular Completo">Rastreamento + Bloqueio
+                                        Veicular Completo</option>
+                                    <option value="Apenas Rastreamento Satelital">Apenas Rastreamento Satelital</option>
+                                    <option value="Gestão de Frota / Múltiplos Veículos">Gestão de Frota / Múltiplos
+                                        Veículos</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-extrabold text-sm sm:text-base py-4 rounded-xl transition shadow-lg shadow-emerald-600/30 uppercase tracking-wider flex items-center justify-center gap-2">
+                            
+                            <span>Gerar Proposta e Enviar no WhatsApp</span>
+                        </button>
+                    </form>
+
+                    <!-- Canais de Contato Direto -->
+                    <div class="mt-8 pt-8 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                        <div class="p-3">
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">WhatsApp Principal</span>
+                            <span class="text-sm font-extrabold text-slate-900">(34) 99929-5603</span>
+                            <span class="text-[11px] text-slate-500 block mt-0.5">Atendimento rápido e
+                                agendamentos</span>
+                        </div>
+                        <div class="p-3">
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">WhatsApp /
+                                Telefone</span>
+                            <span class="text-sm font-extrabold text-slate-900">(34) 98444-6573</span>
+                            <span class="text-[11px] text-slate-500 block mt-0.5">Plantão e suporte técnico</span>
+                        </div>
+                        <div class="p-3">
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">E-mail Oficial</span>
+                            <span
+                                class="text-xs font-bold text-slate-900 break-all">atilasilvarastreadores@gmail.com</span>
+                            <span class="text-[11px] text-slate-500 block mt-0.5">Propostas corporativas</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 9. DÚVIDAS FREQUENTES E ALINHAMENTO TÉCNICO                         -->
+        <!-- ===================================================================== -->
+        <section id="duvidas" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 reveal-elem">
+                    <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Central de informações</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">Dúvidas frequentes</h2>
+                    <p class="text-slate-600 text-sm mt-3 leading-relaxed">Informações sobre compatibilidade, cobertura, instalação, aplicativo e condições comerciais.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-3 reveal-elem">
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">Quais veículos podem receber o rastreador?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">Atendemos carros, motos, caminhões, vans, utilitários, maquinários agrícolas e frotas. Não há restrição geral de marca, ano ou modelo; equipamentos específicos podem exigir avaliação prévia.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">O rastreador funciona em todo o Brasil?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">Sim. A cobertura atende todo o território nacional e utiliza chip multioperadoras. Em locais com sinal fraco, a posição pode sofrer atraso e será atualizada quando a comunicação for restabelecida.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">Com que frequência a localização é atualizada?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">A atualização é programável e pode chegar a aproximadamente um posicionamento por minuto durante o deslocamento.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">Como funciona o bloqueio do veículo?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">O comando pode ser realizado pelo aplicativo/celular, com suporte técnico quando necessário. Em movimento, o sistema atua de forma intermitente para evitar um desligamento brusco.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">O cliente acompanha pelo aplicativo e pelo computador?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">Sim. O acompanhamento pode ser feito em Android, iOS e computador, com histórico de rotas, alertas de ignição, cerca virtual, excesso de velocidade e monitoramento técnico 24h.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">Onde é feita a instalação e quanto tempo demora?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">O atendimento é feito no local solicitado pelo cliente. O prazo médio é de aproximadamente uma hora, conforme o veículo e o equipamento escolhido.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">O equipamento é homologado e possui bateria reserva?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">Sim. É homologado pela Anatel e possui bateria interna com duração aproximada de três horas. A interferência na garantia ou na parte elétrica depende do equipamento.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">O que está incluído no valor mensal?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">O valor a partir de R$ 65,00 corresponde à mensalidade. A instalação custa, em média, R$ 120,00. O equipamento fica em comodato. A fidelidade depende do equipamento; o pagamento pode ser por boleto, cartão ou PIX.</p></details>
+                    <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold text-slate-900">Como funciona o suporte depois da instalação?<span class="text-blue-700 text-xl transition group-open:rotate-45">+</span></summary><p class="pt-4 text-sm leading-relaxed text-slate-600">Há suporte técnico e monitoramento 24h. Em caso de pane ou troca de chip, o prazo médio pode ser de até 24 horas, dependendo do local do veículo.</p></details>
+                </div>
+
+                <div class="max-w-5xl mx-auto mt-16 reveal-elem">
+                    <div class="text-center mb-10">
+                        <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Atendimento personalizado</span>
+                        <h2 class="text-3xl font-black text-slate-950 mt-2">Formulário de Alinhamento Técnico e Comercial</h2>
+                        <p class="text-slate-600 text-sm mt-2">Átila Silva - Rastreamento e Bloqueio Veicular</p>
+                    </div>
+
+                    <form id="technicalForm" onsubmit="sendTechnicalForm(event)" class="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-10">
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">1. Veículos atendidos e compatibilidade</legend>
+                            <label class="form-question" for="technical-vehicles">Quais categorias de veículos você atende hoje?</label><input id="technical-vehicles" name="vehicles" required class="technical-input" value="Carros, motos, caminhões, vans/utilitários, maquinários agrícolas e frotas">
+                            <label class="form-question" for="technical-compatibility">Existe alguma marca, ano ou modelo incompatível?</label><input id="technical-compatibility" name="compatibility" required class="technical-input" value="Não">
+                            <label class="form-question" for="technical-fleet">Atende pessoa física e frotas? Há limite de veículos?</label><input id="technical-fleet" name="fleet" required class="technical-input" value="Atende ambos, sem limite informado">
+                        </fieldset>
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">2. Cobertura e alcance do localizador</legend>
+                            <label class="form-question" for="technical-coverage">Qual é o alcance do rastreador?</label><input id="technical-coverage" name="coverage" required class="technical-input" value="Todo o território nacional">
+                            <label class="form-question" for="technical-signal">Qual tecnologia é usada e como reage em áreas sem sinal?</label><textarea id="technical-signal" name="signal" required class="technical-input technical-textarea">Chip multioperadoras. Em sinal fraco pode haver atraso no posicionamento, atualizado quando o sinal retorna.</textarea>
+                            <label class="form-question" for="technical-update">Com que frequência a posição é atualizada?</label><input id="technical-update" name="update" required class="technical-input" value="Programável, podendo chegar a minuto a minuto">
+                        </fieldset>
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">3. Funcionamento do bloqueio veicular</legend>
+                            <label class="form-question" for="technical-lock">Como funciona o bloqueio seguro na prática?</label><textarea id="technical-lock" name="lock" required class="technical-input technical-textarea">O cliente pode realizar o corte pelo aplicativo/celular, com suporte técnico quando necessário.</textarea>
+                            <label class="form-question" for="technical-safety">Como o bloqueio atua com o veículo em movimento?</label><input id="technical-safety" name="safety" required class="technical-input" value="Por intermitência, evitando desligar de uma vez">
+                        </fieldset>
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">4. Acesso do cliente e aplicativo</legend>
+                            <label class="form-question" for="technical-access">O cliente acompanha por aplicativo, computador ou ambos?</label><input id="technical-access" name="access" required class="technical-input" value="Ambos: Android, iOS e computador">
+                            <label class="form-question" for="technical-features">Quais recursos o aplicativo oferece?</label><input id="technical-features" name="features" required class="technical-input" value="Histórico de rotas, alertas de ignição, cerca virtual e excesso de velocidade">
+                            <label class="form-question" for="technical-monitoring">O que compõe o monitoramento 24h?</label><input id="technical-monitoring" name="monitoring" required class="technical-input" value="Monitoramento técnico e suporte para emergências">
+                        </fieldset>
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">5. Instalação e equipamento</legend>
+                            <label class="form-question" for="technical-installation">Onde e como é feita a instalação?</label><input id="technical-installation" name="installation" required class="technical-input" value="No local solicitado pelo cliente">
+                            <label class="form-question" for="technical-time">Qual o tempo médio de instalação?</label><input id="technical-time" name="time" required class="technical-input" value="Aproximadamente 1 hora">
+                            <label class="form-question" for="technical-warranty">O equipamento interfere na garantia ou na parte elétrica?</label><input id="technical-warranty" name="warranty" required class="technical-input" value="Depende do equipamento solicitado">
+                            <label class="form-question" for="technical-anatel">O módulo é homologado e possui bateria reserva?</label><input id="technical-anatel" name="anatel" required class="technical-input" value="Sim, homologado pela Anatel, com bateria interna de aproximadamente 3 horas">
+                        </fieldset>
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">6. Condições comerciais e contratuais</legend>
+                            <label class="form-question" for="technical-price">O que está incluído no valor a partir de R$ 65,00?</label><input id="technical-price" name="price" required class="technical-input" value="Mensalidade de R$ 65,00; instalação média de R$ 120,00">
+                            <label class="form-question" for="technical-equipment">O rastreador é em comodato ou precisa ser comprado?</label><input id="technical-equipment" name="equipment" required class="technical-input" value="Comodato">
+                            <label class="form-question" for="technical-contract">Existe fidelidade ou multa para cancelamento?</label><input id="technical-contract" name="contract" required class="technical-input" value="Depende do equipamento instalado">
+                            <label class="form-question" for="technical-payment">Quais formas de pagamento são aceitas?</label><input id="technical-payment" name="payment" required class="technical-input" value="Boleto bancário, cartão de crédito e PIX">
+                        </fieldset>
+                        <fieldset class="space-y-5"><legend class="text-lg font-black text-slate-950 border-b border-slate-200 pb-3 w-full">7. Suporte e pós-venda</legend>
+                            <label class="form-question" for="technical-support">Como funciona o suporte técnico?</label><input id="technical-support" name="support" required class="technical-input" value="Atendimento técnico e suporte operacional">
+                            <label class="form-question" for="technical-resolution">Qual o prazo para pane, manutenção ou troca de chip?</label><input id="technical-resolution" name="resolution" required class="technical-input" value="Até 24 horas, dependendo do local do veículo">
+                        </fieldset>
+                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 active:scale-[0.99] text-white font-extrabold text-sm sm:text-base py-4 rounded-xl transition shadow-lg shadow-blue-700/25 uppercase tracking-wider flex items-center justify-center gap-2"><span>Enviar alinhamento pelo WhatsApp</span></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- 10. DEPOIMENTOS DE CLIENTES (CUSTOMER TESTIMONIALS)                  -->
+        <!-- ===================================================================== -->
+        <section id="depoimentos" class="py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8">
+
+                <div class="text-center max-w-2xl mx-auto mb-10 reveal-elem">
+                    <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Avaliações Reais</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">O que dizem nossos clientes</h2>
+                    <p class="text-slate-600 text-sm mt-2">
+                        Quem já protege seu patrimônio com Átila Silva recomenda a qualidade do serviço e a rapidez do
+                        atendimento.
+                    </p>
+                </div>
+
+                <!-- Filtro de Depoimentos -->
+                <div class="flex flex-wrap justify-center items-center gap-2 mb-10 reveal-elem">
+                    <button type="button" onclick="filterReviews('all', this)"
+                        class="reviewFilterButton active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full transition">Todos</button>
+                    <button type="button" onclick="filterReviews('carro', this)"
+                        class="reviewFilterButton bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Carros</button>
+                    <button type="button" onclick="filterReviews('pesado', this)"
+                        class="reviewFilterButton bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Pesados</button>
+                    <button type="button" onclick="filterReviews('moto', this)"
+                        class="reviewFilterButton bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Motos</button>
+                    <button type="button" onclick="filterReviews('frota', this)"
+                        class="reviewFilterButton bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Frotas</button>
+                </div>
+
+                <!-- Grid dos 6 Depoimentos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviews-container">
+
+                    <!-- 1. Roberto Mendes -->
+                    <div
+                        class="reviewCard carro p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-3 text-xs">
+                                ★★★★★
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">
+                                "Instalação rápida e totalmente invisível na caminhonete. O aplicativo responde de
+                                imediato e o teste do bloqueio veicular funcionou perfeitamente. O suporte direto com o
+                                Átila dá uma tranquilidade enorme!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200/60">
+                            <h4 class="font-extrabold text-xs text-slate-900">Roberto Mendes</h4>
+                            <p class="text-[11px] text-slate-500">Produtor Rural e Empresário - Uberaba/MG</p>
+                            <p class="text-[10px] text-blue-700 font-semibold">Toyota Hilux 2023</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Camila Guimarães -->
+                    <div
+                        class="reviewCard carro p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-3 text-xs">
+                                ★★★★★
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">
+                                "Por R$65 por mês tenho a certeza de onde meu carro está a qualquer hora do dia ou da
+                                noite. O aplicativo é super direto e prático, sem complicação. Recomendo para todos os
+                                meus amigos."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200/60">
+                            <h4 class="font-extrabold text-xs text-slate-900">Camila Guimarães</h4>
+                            <p class="text-[11px] text-slate-500">Advogada - Uberlândia/MG</p>
+                            <p class="text-[10px] text-blue-700 font-semibold">Honda HR-V</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Marcos Aurélio Santos -->
+                    <div
+                        class="reviewCard pesado p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-3 text-xs">
+                                ★★★★★
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">
+                                "Rodo à noite e pelas rodovias o monitoramento 24h é questão de sobrevivência. O sinal
+                                satelital não perde nem em trecho de serra. Atendimento técnico impecável do Átila."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200/60">
+                            <h4 class="font-extrabold text-xs text-slate-900">Marcos Aurélio Santos</h4>
+                            <p class="text-[11px] text-slate-500">Transportador Autônomo - Triângulo Mineiro</p>
+                            <p class="text-[10px] text-blue-700 font-semibold">Scania R440</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Thiago F. Nogueira -->
+                    <div
+                        class="reviewCard frota p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-3 text-xs">
+                                ★★★★★
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">
+                                "Instalamos o rastreador em toda a frota de entregas. Conseguimos acompanhar a rota dos
+                                motoristas em tempo real e reduzir custos com desvios, além da proteção contra roubos."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200/60">
+                            <h4 class="font-extrabold text-xs text-slate-900">Thiago F. Nogueira</h4>
+                            <p class="text-[11px] text-slate-500">Diretor de Logística - Frutal/MG</p>
+                            <p class="text-[10px] text-blue-700 font-semibold">Frota de 5 Vans Fiorino</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Lucas P. Silveira -->
+                    <div
+                        class="reviewCard moto p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-3 text-xs">
+                                ★★★★★
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">
+                                "Moto é muito visada para roubo. O Átila instalou um módulo discreto e à prova d’água na
+                                minha moto. O aplicativo avisa qualquer movimento suspeito e posso bloquear na hora."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200/60">
+                            <h4 class="font-extrabold text-xs text-slate-900">Lucas P. Silveira</h4>
+                            <p class="text-[11px] text-slate-500">Entregador de Aplicativo - Araxá/MG</p>
+                            <p class="text-[10px] text-blue-700 font-semibold">Honda CG 160 Titan</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Juliana Vasconcelos -->
+                    <div
+                        class="reviewCard carro p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-3 text-xs">
+                                ★★★★★
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed italic">
+                                "O atendimento é humanizado e muito atencioso. Não tem burocracia de call center,
+                                qualquer dúvida você fala diretamente com o técnico responsável. Vale cada centavo!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200/60">
+                            <h4 class="font-extrabold text-xs text-slate-900">Juliana Vasconcelos</h4>
+                            <p class="text-[11px] text-slate-500">Arquiteta - Ituiutaba/MG</p>
+                            <p class="text-[10px] text-blue-700 font-semibold">Jeep Compass</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Selo de Confiança e CTA -->
+                <div class="mt-12 text-center reveal-elem">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
+                        Mais de centenas de veículos protegidos em toda a região com satisfação máxima comprovada.
+                    </p>
+                    <button
+                        onclick="handleWhatsAppContact('Olá Átila! Li os depoimentos e quero agendar minha instalação.')"
+                        class="bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-xs sm:text-sm px-8 py-4 rounded-xl transition shadow-lg shadow-blue-700/20 uppercase tracking-wide">
+                        Agendar Minha Instalação
                     </button>
-                    <span class="text-xs text-slate-500 font-semibold flex items-center gap-1.5">
-                        <i data-lucide="shield" class="w-4 h-4 text-emerald-600"></i> Compatível com Android e iOS
-                    </span>
                 </div>
 
             </div>
-
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 5. FROTA E MODELOS ATENDIDOS (VEHICLE FLEET)                         -->
-    <!-- ===================================================================== -->
-    <section id="veiculos" class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
-
-            <div class="text-center max-w-2xl mx-auto mb-10 reveal-elem">
-                <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Compatibilidade Total</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">Proteção sob medida para qualquer tipo de veículo</h2>
-            </div>
-
-            <!-- Filtros de Categoria -->
-            <div class="flex flex-wrap justify-center items-center gap-2 mb-10 reveal-elem">
-                <button type="button" onclick="filterVehicles('all', this)" class="vehicle-filter-btn active bg-slate-900 text-white text-xs font-bold px-5 py-2.5 rounded-full transition">Todos</button>
-                <button type="button" onclick="filterVehicles('car', this)" class="vehicle-filter-btn bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200">Carros de Passeio</button>
-                <button type="button" onclick="filterVehicles('moto', this)" class="vehicle-filter-btn bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200">Motos</button>
-                <button type="button" onclick="filterVehicles('truck', this)" class="vehicle-filter-btn bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200">Caminhões &amp; Frotas</button>
-            </div>
-
-            <!-- Grid de Modelos em Destaque -->
-            <div id="vehicles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Modelo 1: Carros de Passeio -->
-                <div class="vehicle-card car p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
-                            <i data-lucide="car" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-slate-950">Carros de Passeio &amp; SUVs</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Instalação oculta e não invasiva, ideal para sedãs, hatches e SUVs de todas as marcas.
-                        </p>
-                        <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs font-semibold text-slate-700">
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Bloqueio anti-furto imediato</p>
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Alerta de ignição</p>
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Histórico de viagens</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div>
-                            <span class="text-[10px] text-slate-400 font-bold block uppercase">Condição</span>
-                            <span class="text-sm font-black text-blue-700">A partir de R$ 65,00/mês</span>
-                        </div>
-                        <button onclick="handleWhatsAppContact('Olá Átila! Quero cotar rastreamento para Carro de Passeio/SUV.')" class="text-xs font-extrabold text-slate-950 hover:text-blue-700 flex items-center gap-1 transition">
-                            Cotar &rarr;
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Modelo 2: Motocicletas -->
-                <div class="vehicle-card moto p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
-                            <i data-lucide="bike" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-slate-950">Motocicletas &amp; Scooters</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Módulos ultra-compactos e resistentes à água, consumo de bateria otimizado.
-                        </p>
-                        <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs font-semibold text-slate-700">
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Sensor de movimento e reboque</p>
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Bloqueio pelo app</p>
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cerca virtual rápida</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div>
-                            <span class="text-[10px] text-slate-400 font-bold block uppercase">Condição</span>
-                            <span class="text-sm font-black text-blue-700">A partir de R$ 65,00/mês</span>
-                        </div>
-                        <button onclick="handleWhatsAppContact('Olá Átila! Quero cotar rastreamento para Motocicleta.')" class="text-xs font-extrabold text-slate-950 hover:text-blue-700 flex items-center gap-1 transition">
-                            Cotar &rarr;
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Modelo 3: Caminhões e Frotas -->
-                <div class="vehicle-card truck p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
-                            <i data-lucide="truck" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-black text-slate-950">Caminhões, Tratores &amp; Frotas</h3>
-                        <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-                            Telemetria robusta para veículos pesados, caminhões baú, carretas e maquinário rural.
-                        </p>
-                        <div class="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs font-semibold text-slate-700">
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Monitoramento 24h contínuo</p>
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Controle de rotas</p>
-                            <p class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Suporte direto com o técnico</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                        <div>
-                            <span class="text-[10px] text-slate-400 font-bold block uppercase">Condição</span>
-                            <span class="text-sm font-black text-blue-700">Sob consulta / Sob medida</span>
-                        </div>
-                        <button onclick="handleWhatsAppContact('Olá Átila! Quero cotar rastreamento para Caminhão/Frota.')" class="text-xs font-extrabold text-slate-950 hover:text-blue-700 flex items-center gap-1 transition">
-                            Cotar &rarr;
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Outros Modelos Atendidos -->
-            <div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200 flex flex-wrap justify-between items-center gap-6">
-                <div>
-                    <h4 class="font-extrabold text-sm text-slate-900">Também Atendemos com Instalação Especializada:</h4>
-                    <p class="text-xs text-slate-500 mt-1">
-                        <strong>Vans &amp; Utilitários</strong> (Fiorino, Master, Sprinter, Ducato) •
-                        <strong>Caminhonetes &amp; Pick-ups</strong> (Hilux, Ranger, S10, Toro, Amarok) •
-                        <strong>Embarcações &amp; Jet-Skis</strong> •
-                        <strong>Máquinas Agrícolas</strong>
-                    </p>
-                </div>
-                <button onclick="handleWhatsAppContact('Olá Átila! Meu modelo de veículo é específico, gostaria de saber se é compatível.')" class="bg-slate-950 hover:bg-black text-white text-xs font-bold px-5 py-3 rounded-xl transition shrink-0">
-                    Consultar proteção para seu modelo no WhatsApp &rarr;
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 6. DIFERENCIAIS EXCLUSIVOS (KEY FEATURES)                            -->
-    <!-- ===================================================================== -->
-    <section id="diferenciais" class="py-20 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
-
-            <div class="text-center max-w-3xl mx-auto mb-14 reveal-elem">
-                <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Cuidando do Seu Patrimônio</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">Diferenciais Exclusivos</h2>
-                <p class="text-slate-600 text-sm mt-3">
-                    Todos os itens que você tem garantidos com a contratação de Átila Silva - Técnico Especializado em rastreamento e bloqueio veicular.
-                </p>
-            </div>
-
-            <!-- Os 6 Diferenciais Oficiais do Panfleto -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- 1. Localização exata -->
-                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        </div>
-                        <span class="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2.5 py-1 rounded">GPS Satelital</span>
-                    </div>
-                    <h3 class="text-lg font-black text-slate-950">Localização exata</h3>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        Precisão satelital em tempo real com mapa detalhado, rotas e alertas no aplicativo.
-                    </p>
-                </div>
-
-                <!-- 2. Bloqueio seguro -->
-                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                            <i data-lucide="lock" class="w-6 h-6"></i>
-                        </div>
-                        <span class="text-[10px] font-black uppercase text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Corte Imediato</span>
-                    </div>
-                    <h3 class="text-lg font-black text-slate-950">Bloqueio seguro</h3>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        Corte imediato de ignição e combustível acionado diretamente pelo seu celular.
-                    </p>
-                </div>
-
-                <!-- 3. Monitoramento 24h / técnico -->
-                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                            <i data-lucide="clock" class="w-6 h-6"></i>
-                        </div>
-                        <span class="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2.5 py-1 rounded">24 Horas</span>
-                    </div>
-                    <h3 class="text-lg font-black text-slate-950">Monitoramento 24h / técnico</h3>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        Supervisão contínua 24 horas por dia para garantir a proteção do seu patrimônio.
-                    </p>
-                </div>
-
-                <!-- 4. Instalação rápida -->
-                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                            <i data-lucide="zap" class="w-6 h-6"></i>
-                        </div>
-                        <span class="text-[10px] font-black uppercase text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">Discreto</span>
-                    </div>
-                    <h3 class="text-lg font-black text-slate-950">Instalação rápida</h3>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        Atendimento ágil com instalação profissional, discreta e sem danos à parte elétrica.
-                    </p>
-                </div>
-
-                <!-- 5. Qualidade e segurança -->
-                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i>
-                        </div>
-                        <span class="text-[10px] font-black uppercase text-blue-700 bg-blue-50 px-2.5 py-1 rounded">Homologado</span>
-                    </div>
-                    <h3 class="text-lg font-black text-slate-950">Qualidade e segurança</h3>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        Módulos homologados de alta durabilidade e confiabilidade comprovada.
-                    </p>
-                </div>
-
-                <!-- 6. Suporte técnico -->
-                <div class="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-lg transition">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                            <i data-lucide="headphones" class="w-6 h-6"></i>
-                        </div>
-                        <span class="text-[10px] font-black uppercase text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded">Átila Silva</span>
-                    </div>
-                    <h3 class="text-lg font-black text-slate-950">Suporte técnico</h3>
-                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                        Atendimento humanizado e direto com Átila Silva - Técnico Especializado.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 7. BANNER ESCURO DE CHAMADA PARA AÇÃO (DARK CTA BANNER)               -->
-    <!-- ===================================================================== -->
-    <section class="py-16 bg-slate-950 text-white relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-8 text-center relative z-10 space-y-6 reveal-elem">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
-                Proteja seu patrimônio com quem entende de verdade
-            </h2>
-            <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-                Instalação rápida e especializada em carros, motos, caminhões e frotas. Fale diretamente com Átila Silva e tenha a tranquilidade que você e sua família merecem.
-            </p>
-
-            <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
-                <button onclick="handleWhatsAppContact('Olá Átila! Quero proteger meu veículo agora mesmo.')" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold px-8 py-4 rounded-xl transition shadow-xl shadow-emerald-600/25 flex items-center gap-2 text-sm uppercase tracking-wide">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    <span>Chamar no WhatsApp ((34) 99929-5603)</span>
-                </button>
-                <a href="tel:34984446573" class="bg-white/10 hover:bg-white/20 active:scale-95 text-white font-bold px-7 py-4 rounded-xl transition border border-white/20 flex items-center gap-2 text-sm">
-                    <i data-lucide="phone-call" class="w-4 h-4 text-blue-400"></i>
-                    <span>Ligar: (34) 98444-6573</span>
-                </a>
-            </div>
-
-            <p class="text-xs text-slate-400 font-medium pt-2">
-                Atendimento ágil para todo o Triângulo Mineiro e região • Mensalidades a partir de R$65,00
-            </p>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 8. SIMULADOR DE COTAÇÃO RÁPIDA (QUICK QUOTE SECTION)                  -->
-    <!-- ===================================================================== -->
-    <section id="orcamento" class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-8">
-
-            <div class="text-center max-w-2xl mx-auto mb-12 reveal-elem">
-                <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Simulador Exclusivo</span>
-                <h2 class="text-3xl font-black text-slate-950 mt-1">Faça uma cotação rápida</h2>
-                <p class="text-slate-500 text-xs sm:text-sm mt-2">
-                    Preencha as informações do seu veículo para receber uma proposta personalizada direto no WhatsApp.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/80 reveal-elem">
-                <form id="quote-form" onsubmit="generateQuote(event)" class="space-y-6">
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <!-- Tipo de Veículo -->
-                        <div>
-                            <label for="quote-vehicle-type" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tipo de Veículo</label>
-                            <select id="quote-vehicle-type" required class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white font-medium">
-                                <option value="Carro de Passeio">Carro de Passeio</option>
-                                <option value="Motocicleta">Motocicleta</option>
-                                <option value="Caminhão / Pesado">Caminhão / Pesado</option>
-                                <option value="Van / Utilitário">Van / Utilitário</option>
-                                <option value="Frota (múltiplos veículos)">Frota (múltiplos veículos)</option>
-                                <option value="Máquina Agrícola">Máquina Agrícola</option>
-                            </select>
-                        </div>
-
-                        <!-- Modelo / Ano -->
-                        <div>
-                            <label for="quote-model" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Modelo / Ano do Veículo</label>
-                            <input type="text" id="quote-model" required placeholder="Ex: Toyota Hilux 2023, Honda Fan 160, Scania R440" class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white transition" />
-                        </div>
-
-                        <!-- Nome do Solicitante -->
-                        <div>
-                            <label for="quote-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Seu Nome Completo</label>
-                            <input type="text" id="quote-name" required placeholder="Digite seu nome" class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white transition" />
-                        </div>
-
-                        <!-- Serviço Desejado -->
-                        <div>
-                            <label for="quote-service" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Serviço Desejado</label>
-                            <select id="quote-service" required class="w-full text-sm px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:bg-white font-medium">
-                                <option value="Rastreamento + Bloqueio Veicular Completo">Rastreamento + Bloqueio Veicular Completo</option>
-                                <option value="Apenas Rastreamento Satelital">Apenas Rastreamento Satelital</option>
-                                <option value="Gestão de Frota / Múltiplos Veículos">Gestão de Frota / Múltiplos Veículos</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-extrabold text-sm sm:text-base py-4 rounded-xl transition shadow-lg shadow-emerald-600/30 uppercase tracking-wider flex items-center justify-center gap-2">
-                        <i data-lucide="send" class="w-5 h-5"></i>
-                        <span>Gerar Proposta e Enviar no WhatsApp</span>
-                    </button>
-                </form>
-
-                <!-- Canais de Contato Direto -->
-                <div class="mt-8 pt-8 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                    <div class="p-3">
-                        <span class="text-[10px] uppercase font-bold text-slate-400 block">WhatsApp Principal</span>
-                        <span class="text-sm font-extrabold text-slate-900">(34) 99929-5603</span>
-                        <span class="text-[11px] text-slate-500 block mt-0.5">Atendimento rápido e agendamentos</span>
-                    </div>
-                    <div class="p-3">
-                        <span class="text-[10px] uppercase font-bold text-slate-400 block">WhatsApp / Telefone</span>
-                        <span class="text-sm font-extrabold text-slate-900">(34) 98444-6573</span>
-                        <span class="text-[11px] text-slate-500 block mt-0.5">Plantão e suporte técnico</span>
-                    </div>
-                    <div class="p-3">
-                        <span class="text-[10px] uppercase font-bold text-slate-400 block">E-mail Oficial</span>
-                        <span class="text-xs font-bold text-slate-900 break-all">atilasilvarastreadores@gmail.com</span>
-                        <span class="text-[11px] text-slate-500 block mt-0.5">Propostas corporativas</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- 9. DEPOIMENTOS DE CLIENTES (CUSTOMER TESTIMONIALS)                   -->
-    <!-- ===================================================================== -->
-    <section id="depoimentos" class="py-20 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8">
-
-            <div class="text-center max-w-2xl mx-auto mb-10 reveal-elem">
-                <span class="text-xs font-black text-blue-700 uppercase tracking-widest">Avaliações Reais</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-950 mt-2">O que dizem nossos clientes</h2>
-                <p class="text-slate-600 text-sm mt-2">
-                    Quem já protege seu patrimônio com Átila Silva recomenda a qualidade do serviço e a rapidez do atendimento.
-                </p>
-            </div>
-
-            <!-- Filtro de Depoimentos -->
-            <div class="flex flex-wrap justify-center items-center gap-2 mb-10 reveal-elem">
-                <button type="button" onclick="filterReviews('all', this)" class="review-btn active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full transition">Todos</button>
-                <button type="button" onclick="filterReviews('carro', this)" class="review-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Carros</button>
-                <button type="button" onclick="filterReviews('pesado', this)" class="review-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Pesados</button>
-                <button type="button" onclick="filterReviews('moto', this)" class="review-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Motos</button>
-                <button type="button" onclick="filterReviews('frota', this)" class="review-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition">Frotas</button>
-            </div>
-
-            <!-- Grid dos 6 Depoimentos -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviews-container">
-
-                <!-- 1. Roberto Mendes -->
-                <div class="review-card carro p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-3 text-xs">
-                            ★★★★★
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            "Instalação rápida e totalmente invisível na caminhonete. O aplicativo responde de imediato e o teste do bloqueio veicular funcionou perfeitamente. O suporte direto com o Átila dá uma tranquilidade enorme!"
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60">
-                        <h4 class="font-extrabold text-xs text-slate-900">Roberto Mendes</h4>
-                        <p class="text-[11px] text-slate-500">Produtor Rural e Empresário - Uberaba/MG</p>
-                        <p class="text-[10px] text-blue-700 font-semibold">Toyota Hilux 2023</p>
-                    </div>
-                </div>
-
-                <!-- 2. Camila Guimarães -->
-                <div class="review-card carro p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-3 text-xs">
-                            ★★★★★
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            "Por R$65 por mês tenho a certeza de onde meu carro está a qualquer hora do dia ou da noite. O aplicativo é super direto e prático, sem complicação. Recomendo para todos os meus amigos."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60">
-                        <h4 class="font-extrabold text-xs text-slate-900">Camila Guimarães</h4>
-                        <p class="text-[11px] text-slate-500">Advogada - Uberlândia/MG</p>
-                        <p class="text-[10px] text-blue-700 font-semibold">Honda HR-V</p>
-                    </div>
-                </div>
-
-                <!-- 3. Marcos Aurélio Santos -->
-                <div class="review-card pesado p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-3 text-xs">
-                            ★★★★★
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            "Rodo à noite e pelas rodovias o monitoramento 24h é questão de sobrevivência. O sinal satelital não perde nem em trecho de serra. Atendimento técnico impecável do Átila."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60">
-                        <h4 class="font-extrabold text-xs text-slate-900">Marcos Aurélio Santos</h4>
-                        <p class="text-[11px] text-slate-500">Transportador Autônomo - Triângulo Mineiro</p>
-                        <p class="text-[10px] text-blue-700 font-semibold">Scania R440</p>
-                    </div>
-                </div>
-
-                <!-- 4. Thiago F. Nogueira -->
-                <div class="review-card frota p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-3 text-xs">
-                            ★★★★★
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            "Instalamos o rastreador em toda a frota de entregas. Conseguimos acompanhar a rota dos motoristas em tempo real e reduzir custos com desvios, além da proteção contra roubos."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60">
-                        <h4 class="font-extrabold text-xs text-slate-900">Thiago F. Nogueira</h4>
-                        <p class="text-[11px] text-slate-500">Diretor de Logística - Frutal/MG</p>
-                        <p class="text-[10px] text-blue-700 font-semibold">Frota de 5 Vans Fiorino</p>
-                    </div>
-                </div>
-
-                <!-- 5. Lucas P. Silveira -->
-                <div class="review-card moto p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-3 text-xs">
-                            ★★★★★
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            "Moto é muito visada para roubo. O Átila instalou um módulo discreto e à prova d’água na minha moto. O aplicativo avisa qualquer movimento suspeito e posso bloquear na hora."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60">
-                        <h4 class="font-extrabold text-xs text-slate-900">Lucas P. Silveira</h4>
-                        <p class="text-[11px] text-slate-500">Entregador de Aplicativo - Araxá/MG</p>
-                        <p class="text-[10px] text-blue-700 font-semibold">Honda CG 160 Titan</p>
-                    </div>
-                </div>
-
-                <!-- 6. Juliana Vasconcelos -->
-                <div class="review-card carro p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 mb-3 text-xs">
-                            ★★★★★
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed italic">
-                            "O atendimento é humanizado e muito atencioso. Não tem burocracia de call center, qualquer dúvida você fala diretamente com o técnico responsável. Vale cada centavo!"
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60">
-                        <h4 class="font-extrabold text-xs text-slate-900">Juliana Vasconcelos</h4>
-                        <p class="text-[11px] text-slate-500">Arquiteta - Ituiutaba/MG</p>
-                        <p class="text-[10px] text-blue-700 font-semibold">Jeep Compass</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Selo de Confiança e CTA -->
-            <div class="mt-12 text-center reveal-elem">
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
-                    Mais de centenas de veículos protegidos em toda a região com satisfação máxima comprovada.
-                </p>
-                <button onclick="handleWhatsAppContact('Olá Átila! Li os depoimentos e quero agendar minha instalação.')" class="bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-xs sm:text-sm px-8 py-4 rounded-xl transition shadow-lg shadow-blue-700/20 uppercase tracking-wide">
-                    Agendar Minha Instalação
-                </button>
-            </div>
-
-        </div>
-    </section>
+        </section>
 
     </main>
 
     <!-- ===================================================================== -->
     <!-- 10. MODAL DE CONTINGÊNCIA / TRATAMENTO DE ERRO                       -->
     <!-- ===================================================================== -->
-    <div id="contingency-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="contingency-modal-title" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+    <div id="offlineContactModal" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="offlineContactModalTitle"
+        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
         <div class="bg-white text-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200">
 
             <div class="flex items-center gap-3 text-amber-600 mb-4">
                 <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold">
-                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                    
                 </div>
                 <div>
-                    <h3 id="contingency-modal-title" class="font-black text-base text-slate-950 leading-tight">Dispositivo Sem Conexão à Internet / Falha no WhatsApp</h3>
+                    <h3 id="offlineContactModalTitle" class="font-black text-base text-slate-950 leading-tight">
+                        Dispositivo Sem Conexão à Internet / Falha no WhatsApp</h3>
                     <p class="text-[11px] text-slate-500">Canais diretos de emergência e contingência</p>
                 </div>
             </div>
 
             <p class="text-xs text-slate-600 leading-relaxed mb-6">
-                Seu dispositivo está sem acesso à rede ou houve instabilidade temporária. Não se preocupe: você ainda pode ligar diretamente ou copiar o número para falar com Átila Silva.
+                Seu dispositivo está sem acesso à rede ou houve instabilidade temporária. Não se preocupe: você ainda
+                pode ligar diretamente ou copiar o número para falar com Átila Silva.
             </p>
 
             <div class="space-y-3">
@@ -925,8 +1209,11 @@
                         <span class="text-sm font-extrabold text-slate-900">(34) 99929-5603</span>
                     </div>
                     <div class="flex gap-2">
-                        <button onclick="copyToClipboard('(34) 99929-5603')" class="px-2.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-bold transition">Copiar</button>
-                        <a href="tel:34999295603" class="px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition">Ligar Agora</a>
+                        <button onclick="copyToClipboard('(34) 99929-5603')"
+                            class="px-2.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-bold transition">Copiar</button>
+                        <a href="tel:34999295603"
+                            class="px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition">Ligar
+                            Agora</a>
                     </div>
                 </div>
 
@@ -937,8 +1224,10 @@
                         <span class="text-sm font-extrabold text-slate-900">(34) 98444-6573</span>
                     </div>
                     <div class="flex gap-2">
-                        <button onclick="copyToClipboard('(34) 98444-6573')" class="px-2.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-bold transition">Copiar</button>
-                        <a href="tel:34984446573" class="px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition">Ligar</a>
+                        <button onclick="copyToClipboard('(34) 98444-6573')"
+                            class="px-2.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-bold transition">Copiar</button>
+                        <a href="tel:34984446573"
+                            class="px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition">Ligar</a>
                     </div>
                 </div>
 
@@ -948,13 +1237,18 @@
                         <span class="text-[10px] text-slate-400 uppercase font-bold block">Email Oficial</span>
                         <span class="text-xs font-extrabold text-slate-900">atilasilvarastreadores@gmail.com</span>
                     </div>
-                    <a href="mailto:atilasilvarastreadores@gmail.com" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition">Enviar E-mail</a>
+                    <a href="mailto:atilasilvarastreadores@gmail.com"
+                        class="px-3 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-bold transition">Enviar
+                        E-mail</a>
                 </div>
             </div>
 
             <div class="mt-6 flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
-                <button onclick="closeOfflineModal()" class="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900">Fechar</button>
-                <button onclick="retryConnection()" class="px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl hover:bg-emerald-700 transition">Tentar Abrir Novamente</button>
+                <button onclick="closeOfflineModal()"
+                    class="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900">Fechar</button>
+                <button onclick="retryConnection()"
+                    class="px-4 py-2 bg-emerald-600 text-white text-xs font-bold rounded-xl hover:bg-emerald-700 transition">Tentar
+                    Abrir Novamente</button>
             </div>
 
         </div>
@@ -971,14 +1265,18 @@
                 <!-- Apresentação da Marca -->
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-xl">A</div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-xl">
+                            A</div>
                         <div>
                             <span class="font-black text-base tracking-tight block">ÁTILA SILVA</span>
-                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase">RASTREAMENTO VEICULAR</span>
+                            <span class="text-[10px] font-bold text-blue-400 tracking-widest uppercase">RASTREAMENTO
+                                VEICULAR</span>
                         </div>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">
-                        Átila Silva - Técnico Especializado. Rastreamento e bloqueio veicular com precisão satelital, instalação rápida e suporte direto com o profissional.
+                        Átila Silva - Técnico Especializado. Rastreamento e bloqueio veicular com precisão satelital,
+                        instalação rápida e suporte direto com o profissional.
                     </p>
                     <div class="text-xs text-amber-400 font-bold">
                         Valores a partir de R$65,00 Por mês
@@ -1000,7 +1298,8 @@
 
                 <!-- Serviços -->
                 <div>
-                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-300 mb-4">Serviços Especializados</h4>
+                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-300 mb-4">Serviços Especializados
+                    </h4>
                     <ul class="space-y-2 text-xs font-semibold text-slate-400">
                         <li>Rastreamento Veicular Satelital</li>
                         <li>Bloqueio Remoto de Ignição</li>
@@ -1015,20 +1314,23 @@
                     <h4 class="text-xs font-black uppercase tracking-widest text-slate-300 mb-4">Contatos Oficiais</h4>
                     <ul class="space-y-3 text-xs">
                         <li>
-                            <a href="tel:34999295603" class="text-slate-400 hover:text-white flex items-center gap-2 transition">
-                                <i data-lucide="phone" class="w-4 h-4 text-blue-400"></i>
+                            <a href="tel:34999295603"
+                                class="text-slate-400 hover:text-white flex items-center gap-2 transition">
+                                
                                 <span class="font-bold text-slate-200">(34) 99929-5603</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://wa.me/5534984446573" target="_blank" class="text-slate-400 hover:text-white flex items-center gap-2 transition">
-                                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                            <a href="https://wa.me/5534984446573" target="_blank"
+                                class="text-slate-400 hover:text-white flex items-center gap-2 transition">
+                                
                                 <span class="font-bold text-slate-200">(34) 98444-6573</span>
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:atilasilvarastreadores@gmail.com" class="text-slate-400 hover:text-white flex items-center gap-2 transition break-all">
-                                <i data-lucide="mail" class="w-4 h-4 text-red-400"></i>
+                            <a href="mailto:atilasilvarastreadores@gmail.com"
+                                class="text-slate-400 hover:text-white flex items-center gap-2 transition break-all">
+                                
                                 <span class="font-medium">atilasilvarastreadores@gmail.com</span>
                             </a>
                         </li>
@@ -1039,19 +1341,22 @@
 
             <!-- Direitos Autorais -->
             <div class="pt-8 text-center text-xs text-slate-500 font-medium">
-                &copy; 2026 Átila Silva - Rastreamento e Bloqueio Veicular. Todos os direitos reservados. Triângulo Mineiro e Região.
+                &copy; 2026 Átila Silva - Rastreamento e Bloqueio Veicular. Todos os direitos reservados. Triângulo
+                Mineiro e Região.
             </div>
         </div>
     </footer>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
-    <button onclick="handleWhatsAppContact('Olá Átila! Vim pelo site e gostaria de um atendimento rápido.')" aria-label="WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+    <button onclick="handleWhatsAppContact('Olá Átila! Vim pelo site e gostaria de um atendimento rápido.')"
+        aria-label="WhatsApp"
+        class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
-        <i data-lucide="message-circle" class="w-7 h-7 relative z-10"></i>
+        
     </button>
 
     <!-- Script Customizado Separado -->
-    <script src="script.js"></script>
+    <script src="acess/script.js"></script>
 </body>
 
 </html>

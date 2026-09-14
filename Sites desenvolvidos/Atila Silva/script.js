@@ -1,12 +1,7 @@
-// 1. Inicialização de Ícones
-if (window.lucide) {
-    lucide.createIcons();
-}
-
-// 2. Sistema de Detecção Online/Offline
+// 1. Sistema de Detecção Online/Offline
 function updateOnlineStatus() {
-    const contingencyBar = document.getElementById('contingency-bar');
-    const statusBar = document.getElementById('status-bar');
+    const contingencyBar = document.getElementById('offlineNoticeBar');
+    const statusBar = document.getElementById('siteStatusBar');
     if (!contingencyBar || !statusBar) return;
     if (!navigator.onLine) {
         contingencyBar.classList.remove('hidden');
@@ -43,14 +38,14 @@ function handleWhatsAppContact(customMessage) {
 }
 
 function openOfflineModal() {
-    const modal = document.getElementById('contingency-modal');
+    const modal = document.getElementById('offlineContactModal');
     if (!modal) return;
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
 }
 
 function closeOfflineModal() {
-    const modal = document.getElementById('contingency-modal');
+    const modal = document.getElementById('offlineContactModal');
     if (!modal) return;
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
@@ -76,29 +71,29 @@ function copyToClipboard(text) {
 }
 
 // 4. Toggle Mobile Menu
-const mobileToggle = document.getElementById('mobile-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.toggle('hidden') === false;
-        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 }
 
 function toggleMobileMenu() {
     if (!mobileMenu) return;
     mobileMenu.classList.add('hidden');
-    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
 }
 
 // 5. Simulação Interativa no Mockup do Smartphone
 let isVehicleLocked = false;
 
 function simulateVehicleLock() {
-    const btn = document.getElementById('toggle-ignition-btn');
-    const btnText = document.getElementById('lock-btn-text');
-    const statusLabel = document.getElementById('app-vehicle-status');
-    const msg = document.getElementById('mock-status-msg');
+    const btn = document.getElementById('vehicleIgnitionButton');
+    const btnText = document.getElementById('vehicleLockButtonText');
+    const statusLabel = document.getElementById('appVehicleStatus');
+    const msg = document.getElementById('vehicleMockStatus');
     if (!btn || !btnText || !statusLabel || !msg || btn.disabled) return;
 
     btn.disabled = true;
@@ -143,14 +138,14 @@ function simulateVehicleLock() {
 
 // 6. Filtro de Categorias de Veículos
 function filterVehicles(cat, selectedButton) {
-    document.querySelectorAll('.vehicle-filter-btn').forEach(btn => {
-        btn.className = 'vehicle-filter-btn bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200';
+    document.querySelectorAll('.vehicleFilterButton').forEach(btn => {
+        btn.className = 'vehicleFilterButton bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold px-5 py-2.5 rounded-full transition border border-slate-200';
     });
     if (selectedButton) {
-        selectedButton.className = 'vehicle-filter-btn active bg-slate-900 text-white text-xs font-bold px-5 py-2.5 rounded-full transition';
+        selectedButton.className = 'vehicleFilterButton active bg-slate-900 text-white text-xs font-bold px-5 py-2.5 rounded-full transition';
     }
 
-    const cards = document.querySelectorAll('.vehicle-card');
+    const cards = document.querySelectorAll('.vehicleCard');
     cards.forEach(card => {
         if (cat === 'all' || card.classList.contains(cat)) {
             card.classList.remove('hidden');
@@ -162,14 +157,14 @@ function filterVehicles(cat, selectedButton) {
 
 // 7. Filtro de Depoimentos
 function filterReviews(cat, selectedButton) {
-    document.querySelectorAll('.review-btn').forEach(btn => {
-        btn.className = 'review-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition';
+    document.querySelectorAll('.reviewFilterButton').forEach(btn => {
+        btn.className = 'reviewFilterButton bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-full transition';
     });
     if (selectedButton) {
-        selectedButton.className = 'review-btn active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full transition';
+        selectedButton.className = 'reviewFilterButton active bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-full transition';
     }
 
-    const cards = document.querySelectorAll('.review-card');
+    const cards = document.querySelectorAll('.reviewCard');
     cards.forEach(card => {
         if (cat === 'all' || card.classList.contains(cat)) {
             card.classList.remove('hidden');
@@ -182,10 +177,10 @@ function filterReviews(cat, selectedButton) {
 // 8. Simulador de Cotação
 function generateQuote(e) {
     e.preventDefault();
-    const type = document.getElementById('quote-vehicle-type').value;
-    const model = document.getElementById('quote-model').value.trim();
-    const name = document.getElementById('quote-name').value.trim();
-    const service = document.getElementById('quote-service').value;
+    const type = document.getElementById('quoteVehicleType').value;
+    const model = document.getElementById('quoteModel').value.trim();
+    const name = document.getElementById('quoteName').value.trim();
+    const service = document.getElementById('quoteService').value;
 
     const formattedMsg = `*SIMULAÇÃO DE COTAÇÃO - SITE*\n` +
         `• *Nome:* ${name}\n` +
