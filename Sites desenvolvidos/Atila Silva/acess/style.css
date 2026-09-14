@@ -54,7 +54,6 @@ body {
     pointer-events: none;
 }
 
-
 /* Ocultar barra de rolagem horizontal mantendo deslize fluido */
 
 .no-scrollbar::-webkit-scrollbar {
@@ -62,14 +61,9 @@ body {
 }
 
 .no-scrollbar {
-    -ms-overflow-style: none;
-    /* IE e Edge */
-    scrollbar-width: none;
-    /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
 }
-
-
-
 
 /* Faixa contínua de categorias */
 
@@ -98,11 +92,10 @@ body {
         width: 100%;
         justify-content: center;
     }
-    .marquee-group+.marquee-group {
+    .marquee-group + .marquee-group {
         display: none;
     }
 }
-
 
 /* Radar Ping Animation */
 
@@ -125,7 +118,6 @@ body {
     animation: radar-pulse 3s cubic-bezier(0.2, 0.6, 0.35, 1) 1.5s infinite;
 }
 
-
 /* Scroll Reveal Transition */
 
 .reveal-elem {
@@ -139,7 +131,6 @@ body {
     transform: translateY(0);
 }
 
-
 /* Custom Glassmorphism */
 
 .glass-panel {
@@ -148,7 +139,6 @@ body {
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 /* Floating Toast Animation */
 
@@ -341,6 +331,7 @@ body {
         right: 1rem;
     }
 }
+
 .floating-badge {
     display: flex;
     align-items: center;
@@ -398,6 +389,7 @@ body {
 .floating-badge-monitoring {
     left: auto;
 }
+
 .floating-whatsapp-button {
     background: rgb(74, 171, 82);
     border: 0;
@@ -567,5 +559,32 @@ body {
 @media (max-width: 640px) {
     .technical-input {
         font-size: 0.8125rem;
+    }
+}
+
+/* Botão de ação rápida de e-mail */
+.email-action-btn {
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.email-action-btn:hover {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.email-action-btn:active {
+    transform: scale(0.97);
+}
+
+/* Ajuste de responsividade no modal de contingência */
+@media (max-width: 420px) {
+    #offlineContactModal .p-3.5 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    #offlineContactModal .email-action-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
