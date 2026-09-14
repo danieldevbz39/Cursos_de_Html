@@ -433,44 +433,39 @@
                     </p>
 
                     <!-- Bullet Points de Recursos do Aplicativo -->
-                    <ul class="space-y-3.5 pt-2">
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                                
-                            </div>
+                    <ul class="app-feature-list space-y-3.5 pt-2">
+                        <li class="app-feature-item flex items-start gap-3">
+                            <span class="app-feature-check" aria-label="Verificado" title="Localização satelital em tempo real">
+                                ✓
+                            </span>
                             <span class="text-sm text-slate-700 font-semibold">Localização satelital em tempo real com
                                 atualização contínua de posição.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                                
-                            </div>
+                        <li class="app-feature-item flex items-start gap-3">
+                            <span class="app-feature-check" aria-label="Verificado" title="Bloqueio e desbloqueio">
+                                ✓
+                            </span>
                             <span class="text-sm text-slate-700 font-semibold">Bloqueio e desbloqueio do veículo com 1
                                 toque na tela.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                                
-                            </div>
+                        <li class="app-feature-item flex items-start gap-3">
+                            <span class="app-feature-check" aria-label="Verificado" title="Histórico de trajetos">
+                                ✓
+                            </span>
                             <span class="text-sm text-slate-700 font-semibold">Histórico detalhado de trajetos, paradas
                                 e velocidades atingidas.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                                
-                            </div>
+                        <li class="app-feature-item flex items-start gap-3">
+                            <span class="app-feature-check" aria-label="Verificado" title="Alertas de ignição e cerca virtual">
+                                ✓
+                            </span>
                             <span class="text-sm text-slate-700 font-semibold">Alertas de ignição ligada/desligada e
                                 alertas de cerca virtual.</span>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <div
-                                class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                                
-                            </div>
+                        <li class="app-feature-item flex items-start gap-3">
+                            <span class="app-feature-check" aria-label="Verificado" title="Status de ignição e bateria">
+                                ✓
+                            </span>
                             <span class="text-sm text-slate-700 font-semibold">Indicador de status de ignição, nível de
                                 bateria e sinal GPS.</span>
                         </li>
@@ -815,10 +810,10 @@
                         
                         <span>Chamar no WhatsApp ((34) 99929-5603)</span>
                     </button>
-                    <a href="tel:34984446573"
+                    <a href="https://wa.me/5534984446573?text=Ol%C3%A1%20%C3%81tila!%20Gostaria%20de%20falar%20pelo%20WhatsApp%20sobre%20o%20n%C3%BAmero%20(34)%2098444-6573."
                         class="bg-white/10 hover:bg-white/20 active:scale-95 text-white font-bold px-7 py-4 rounded-xl transition border border-white/20 flex items-center gap-2 text-sm">
                         
-                        <span>Ligar: (34) 98444-6573</span>
+                        <span>WhatsApp: (34) 98444-6573</span>
                     </a>
                 </div>
 
@@ -1220,8 +1215,8 @@
                     <div class="flex gap-2">
                         <button onclick="copyToClipboard('(34) 98444-6573')"
                             class="px-2.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-bold transition">Copiar</button>
-                        <a href="tel:34984446573"
-                            class="px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded-lg text-xs font-bold transition">Ligar</a>
+                        <a href="https://wa.me/5534984446573?text=Ol%C3%A1%20%C3%81tila!%20Gostaria%20de%20falar%20pelo%20WhatsApp%20sobre%20o%20n%C3%BAmero%20(34)%2098444-6573."
+                            class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition">WhatsApp</a>
                     </div>
                 </div>
 
@@ -1344,7 +1339,7 @@
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
     <button onclick="handleWhatsAppContact('Olá Átila! Vim pelo site e gostaria de um atendimento rápido.')"
         aria-label="WhatsApp"
-        class="floating-whatsapp-button fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+        class="floating-whatsapp-button fixed bottom-6 right-6 z-50 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
         <span class="floating-whatsapp-pulse animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
         <img src="source/whatsapp.png" alt="WhatsApp" class="relative z-10 w-7 h-7 object-cover rounded-full">
     </button>
