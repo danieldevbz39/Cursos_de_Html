@@ -9,6 +9,10 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+.footer-brand-logo {
+    filter: brightness(0) invert(1);
+}
+
 .reviewCard {
     transition: filter 260ms ease, transform 260ms ease, opacity 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
@@ -215,6 +219,126 @@ body {
         display: block;
         width: min(280px, 86%);
         margin: -1rem auto 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #inicio {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    #inicio .max-w-7xl {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    #inicio .grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    #inicio .lg\:col-span-7,
+    #inicio .lg\:col-span-5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 100%;
+        max-width: 100%;
+        min-width: 0;
+        text-align: center;
+    }
+
+    #inicio h1 {
+        display: block;
+        font-size: 2rem;
+        line-height: 1.14;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #inicio p {
+        display: block;
+        font-size: 0.9rem;
+        line-height: 1.42;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #inicio .rounded-2xl {
+        padding: 0.8rem 1rem;
+    }
+
+    #inicio button,
+    #inicio a {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.78rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #inicio .w-72,
+    #inicio .sm\:w-88 {
+        width: min(250px, 90vw);
+        height: 250px;
+    }
+
+    .floating-badge {
+        display: flex;
+        flex-wrap: wrap;
+        transform: scale(0.82);
+    }
+
+    .floating-badge-location,
+    .floating-badge-lock {
+        left: -1rem;
+    }
+
+    .floating-badge-monitoring {
+        right: -1rem;
+        left: auto;
+        top: 50%;
+    }
+
+    .floating-badge .floating-badge-icon {
+        width: 2rem;
+        height: 2rem;
+        margin-left: -1.5rem;
+    }
+
+    .floating-badge-content {
+        min-width: 100px;
+    }
+
+    .floating-badge-content p {
+        font-size: 0.68rem;
+    }
+
+    .floating-whatsapp-button {
+        width: 44px;
+        height: 44px;
+        bottom: 1rem;
+        right: 1rem;
     }
 }
 .floating-badge {
