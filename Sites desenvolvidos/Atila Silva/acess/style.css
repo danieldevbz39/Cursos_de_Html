@@ -9,6 +9,58 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.header-cta {
+    max-width: max-content;
+}
+
+.responsive-action-group {
+    width: 100%;
+}
+
+.responsive-action-button {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 640px) {
+    .responsive-action-button {
+        width: auto;
+    }
+
+    .header-cta {
+        width: auto;
+    }
+}
+
+@media (max-width: 639px) {
+    .header-cta {
+        max-width: none;
+        flex: 1;
+    }
+
+    .header-cta button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #mobileMenu a,
+    #mobileMenu button {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
 .footer-brand-logo {
     filter: brightness(0) invert(1);
 }
@@ -115,6 +167,11 @@ body {
         transform: scale(2.6);
         opacity: 0;
     }
+}
+
+.animate-radar-1,
+.animate-radar-2 {
+    pointer-events: none;
 }
 
 .animate-radar-1 {
