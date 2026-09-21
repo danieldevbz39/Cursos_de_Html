@@ -479,35 +479,79 @@ a {
         height: 250px;
     }
 
-    .floating-badge {
-        display: flex;
-        flex-wrap: wrap;
-        transform: scale(0.82);
+    #inicio .responsive-action-group {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-    .floating-badge-location,
+    #inicio .responsive-action-group > * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #inicio .reveal-elem {
+        text-align: center;
+    }
+
+    #veiculos button[onclick*="Meu modelo de veículo é específico"] {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .floating-badge {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0.7);
+        min-width: 138px;
+        max-width: 148px;
+        padding: 0.42rem 0.5rem;
+        gap: 0.35rem;
+    }
+
+    .floating-badge-location {
+        left: -0.9rem;
+        top: -0.2rem;
+    }
+
     .floating-badge-lock {
-        left: -1rem;
+        left: -0.9rem;
+        bottom: -0.2rem;
+        top: auto;
     }
 
     .floating-badge-monitoring {
-        right: -1rem;
+        right: -0.9rem;
         left: auto;
         top: 50%;
+        transform: translateY(-50%) scale(0.7);
     }
 
     .floating-badge .floating-badge-icon {
-        width: 2rem;
-        height: 2rem;
-        margin-left: -1.5rem;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-left: -1.2rem;
+        flex: 0 0 1.7rem;
     }
 
     .floating-badge-content {
-        min-width: 100px;
+        min-width: 88px;
+        align-items: center;
+        text-align: center;
     }
 
     .floating-badge-content p {
-        font-size: 0.68rem;
+        font-size: 0.58rem;
+        line-height: 1.1;
+        text-align: center;
     }
 
     .floating-whatsapp-button {
