@@ -107,6 +107,125 @@ a {
 }
 
 
+/* Carrossel de Trabalhos Realizados */
+
+.works-carousel {
+    overflow: hidden;
+    position: relative;
+    border-radius: 1.75rem;
+    border: 1px solid #e2e8f0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.works-carousel::before,
+.works-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.works-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.works-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.works-track {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    padding: 1.2rem;
+    animation: works-scroll 48s linear infinite;
+}
+
+.works-slide {
+    flex: 0 0 320px;
+    width: 320px;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.works-slide img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.works-slide figcaption {
+    display: block;
+    padding: 0.8rem 0.9rem 1rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: #1e293b;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(248,250,252,0.98), rgba(241,245,249,0.98));
+    border-top: 1px solid rgba(148, 163, 184, 0.35);
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.35s ease, background 0.35s ease;
+}
+
+.works-slide:hover {
+    transform: scale(1.03);
+    box-shadow: 0 22px 40px rgba(15, 23, 42, 0.14);
+    border-color: rgba(59, 130, 246, 0.8);
+}
+
+.works-slide:hover img {
+    transform: scale(1.1);
+}
+
+.works-track:hover .works-slide {
+    filter: grayscale(1);
+    opacity: 0.88;
+}
+
+.works-track:hover .works-slide:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+@keyframes works-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 640px) {
+    .works-slide {
+        flex-basis: 260px;
+        width: 260px;
+    }
+
+    .works-slide img {
+        height: 220px;
+    }
+}
+
 /* Ocultar barra de rolagem horizontal mantendo deslize fluido */
 
 .no-scrollbar::-webkit-scrollbar {
