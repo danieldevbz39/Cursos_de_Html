@@ -1,19 +1,98 @@
 const list = document.querySelector('ul')
-const buttonShowAll = document.querySelector('.show-all')
-let myLi = ''
+const buttonshowAll = document.querySelector('.show-all')
+const buttonMapAll = document.querySelector('.map-all')
+
 
 function showAll() {
+    let myLi = ''
     menuOptions.forEach((product) => {
         myLi += `
-                <li>
-                    <img src=${product.src}>
-                    <p>${product.name}</p>
-                    <p class="item-price">R$ ${product.price}</p>
-                </li>
-        `
+                    <li>
+                        <img src=${product.src}>
+                        <p>${product.name}</p>
+                        <p class="item-price">R$ ${product.price},00</p>
+                    </li>
+                `
     })
+
     list.innerHTML = myLi
+}
+function mapAllItems() {
+    const newPrices = menuOptions.map((product) => ({
+        ...product, //Spread Operator 'Trás todos ítens da lista'
+        price: product.price * 0.9, //10% desconto
+    }))
+
+    
+
+    console.log(newPrices)
+    // console.log(mapAllItems) testando botão map
+    
 }
 
 
-buttonShowAll.addEventListener('click', showAll)
+// xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//Mapeando ítens
+// function mapAllItems() {
+//     const newPrices = menuOptions.map((product) => ({
+//         name: product.name,
+//         price: product.price * 0.9, //10% desconto
+//         vegan: product.vegan,
+//         src: product.src
+//     }))
+
+//     console.log(newPrices)
+//     // console.log(mapAllItems) testando botão map
+    
+// }
+
+buttonshowAll.addEventListener('click', showAll)
+buttonMapAll.addEventListener('click', mapAllItems)
+
+
+// xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//mostrando lista na tela
+// let myLi = ''
+
+// menuOptions.forEach((product) => {
+//     myLi += `
+//     <li>
+//             <img src=${product.src}>
+//             <p>${product.name}</p>
+//             <p class="item-price">R$ ${product.price}</p>
+//         </li>
+//     `
+// })
+
+// list.innerHTML = myLi
+// console.log(myLi)
+
+
+// xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// testando arquivo product
+// const product = { name: 'X-Salada', price: 30, vegan: false, src: './img/xsalada.jpeg' }
+
+// list.innerHTML = `
+//         <li>
+//             <img src=${product.src}>
+//             <p>${product.name}</p>
+//             <p class="item-price">${product.price}</p>
+//         </li>
+// `
+
+// xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//testando lista
+// list.innerHTML = `
+//         <li>
+//             <img src="source/bacon-egg.png" alt="">
+//             <p>X-Vegon</p>
+//             <p class="item-price">R$ 45,00</p>
+//         </li>
+// `
+
+
+// xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// console.log(list)
+// testando list no console
+
+
