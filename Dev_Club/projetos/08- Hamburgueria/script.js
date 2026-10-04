@@ -5,7 +5,7 @@ let myLi = ''
 
 
 function showAll(productsArray) {
-    myLi = ''
+    let myLi = ''
     productsArray.forEach((product) => {
         myLi += `
                     <li>
@@ -45,7 +45,7 @@ function mapAllItems() {
 
 // }
 
-buttonshowAll.addEventListener('click', ()=> showAll(menuOptions))
+buttonshowAll.addEventListener('click', () => showAll(menuOptions))
 buttonMapAll.addEventListener('click', mapAllItems)
 
 // const list = document.querySelector('ul')
