@@ -1,16 +1,17 @@
 const list = document.querySelector('ul')
 const buttonshowAll = document.querySelector('.show-all')
 const buttonMapAll = document.querySelector('.map-all')
+let myLi = ''
 
 
-function showAll() {
-    let myLi = ''
-    menuOptions.forEach((product) => {
+function showAll(productsArray) {
+    myLi = ''
+    productsArray.forEach((product) => {
         myLi += `
                     <li>
                         <img src=${product.src}>
                         <p>${product.name}</p>
-                        <p class="item-price">R$ ${product.price},00</p>
+                        <p class="item-price">R$ ${product.price}</p>
                     </li>
                 `
     })
@@ -23,11 +24,9 @@ function mapAllItems() {
         price: product.price * 0.9, //10% desconto
     }))
 
-    
+    showAll(newPrices)
 
-    console.log(newPrices)
-    // console.log(mapAllItems) testando botão map
-    
+
 }
 
 
@@ -43,11 +42,74 @@ function mapAllItems() {
 
 //     console.log(newPrices)
 //     // console.log(mapAllItems) testando botão map
-    
+
 // }
 
-buttonshowAll.addEventListener('click', showAll)
+buttonshowAll.addEventListener('click', ()=> showAll(menuOptions))
 buttonMapAll.addEventListener('click', mapAllItems)
+
+// const list = document.querySelector('ul')
+// const buttonshowAll = document.querySelector('.show-all')
+// const buttonMapAll = document.querySelector('.map-all')
+// let myLi = ''
+
+
+// function showAll() {
+//     myLi = ''
+//     menuOptions.forEach((product) => {
+//         myLi += `
+//                     <li>
+//                         <img src=${product.src}>
+//                         <p>${product.name}</p>
+//                         <p class="item-price">R$ ${product.price}</p>
+//                     </li>
+//                 `
+//     })
+
+//     list.innerHTML = myLi
+// }
+// function mapAllItems() {
+//     const newPrices = menuOptions.map((product) => ({
+//         ...product, //Spread Operator 'Trás todos ítens da lista'
+//         price: product.price * 0.9, //10% desconto
+//     }))
+
+//     myLi = ''
+//     newPrices.forEach((product) => {
+//         myLi += `
+//                     <li>
+//                         <img src=${product.src}>
+//                         <p>${product.name}</p>
+//                         <p class="item-price">R$ ${product.price}</p>
+//                     </li>
+//                 `
+//     })
+
+//     list.innerHTML = myLi
+
+//     console.log(newPrices)
+//     // console.log(mapAllItems) testando botão map
+
+// }
+
+
+// // xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// //Mapeando ítens
+// // function mapAllItems() {
+// //     const newPrices = menuOptions.map((product) => ({
+// //         name: product.name,
+// //         price: product.price * 0.9, //10% desconto
+// //         vegan: product.vegan,
+// //         src: product.src
+// //     }))
+
+// //     console.log(newPrices)
+// //     // console.log(mapAllItems) testando botão map
+
+// // }
+
+// buttonshowAll.addEventListener('click', showAll)
+// buttonMapAll.addEventListener('click', mapAllItems)
 
 
 // xxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
