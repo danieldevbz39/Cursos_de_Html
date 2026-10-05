@@ -54,6 +54,7 @@ function sumAllItems() {
                 <p>O valor dos ítens é R$ ${ totalValue}</p>
             </li>
         `
+    // console.log(totalValue)
 }
 
 buttonshowAll.addEventListener('click', () => showAll(menuOptions))
